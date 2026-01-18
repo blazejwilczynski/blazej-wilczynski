@@ -1,0 +1,17 @@
+:root{
+  --background-color: #F1F1F1;
+  --base-text-color: rgb(60, 60, 60);
+  --base-text-fade: rgba(0, 0, 0, 0.55);
+  --creepy-pink: #EF8181;
+
+  --red-base: rgba(236, 50, 96, 0.9);
+  --red-base-fade: #F27493;
+  --light-brown: #EAE6DD;
+  --yellow: #E8BD79;
+  --yellow-light: #EACA97;
+  --mint-green: #9FB9B2;
+
+  --blue: #909BB0;
+  --pink: #E390A3;
+  --green: #9BB4AA;
+}

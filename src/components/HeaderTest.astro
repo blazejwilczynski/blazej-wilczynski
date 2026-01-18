@@ -1,0 +1,187 @@
+---
+import BehanceLogo from "../assets/icons/behance-logo.astro";
+import InstagramLogo from "../assets/icons/instagram-logo.astro";
+import BwLogo from "../assets/icons/bw-logo-25px-42px.svg";
+---
+
+<header class="header">
+  <div class="inner">
+    <div class="logo">
+  <a href="/" aria-label="Strona główna">
+    <img src={BwLogo.src} width={BwLogo.width} height={BwLogo.height}alt="BW logo" />
+  </a>
+  </div>
+
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Książki</a>
+       <a href="#">Grafika</a>
+       <a href="#">Blog</a>
+      <a href="#">Kontakt</a>
+    </nav>
+
+    <div class="socials">
+      <a
+        class="social-logo"
+        href="http://www.behance.com/blazejwilczynski"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <BehanceLogo />
+      </a>
+
+      <a
+        class="social-logo"
+        href="http://www.instagram.com/blazejwilczynski"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <InstagramLogo />
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+
+/* =========================
+   HEADER – CONFIG
+========================= */
+.header {
+  --accent-red: #e11d48; /* główny czerwony */
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 3 strefy */
+.logo {
+  flex: 1;
+  height: 25px;
+  width: 42px;
+  color: #111;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.socials {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+/* =========================
+   NAV – nowoczesny red hover
+========================= */
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: rgba(17, 17, 17, 0.75);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 6px 2px;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+/* animowana kreska */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-red);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.nav a:hover {
+  color: var(--accent-red);
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav a:active {
+  transform: translateY(1px);
+}
+
+.nav a:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-red) 40%, transparent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* =========================
+   SOCIAL ICONS – bez kółek
+========================= */
+.social-logo {
+  width: 21px;
+  height: 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(17, 17, 17, 0.7);
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+/* SVG MUSI iść za kolorem */
+.social-logo :global(svg) {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+/* hover: kolor + lift + delikatny glow */
+.social-logo:hover {
+  color: var(--accent-red);
+  transform: translateY(-1px);
+  filter: drop-shadow(
+    0 6px 10px
+    color-mix(in srgb, var(--accent-red) 22%, transparent)
+  );
+}
+
+.social-logo:active {
+  transform: translateY(0);
+  filter: none;
+}
+
+.social-logo:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-red) 40%, transparent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+</style>
