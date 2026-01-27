@@ -24,38 +24,98 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
 
     <!-- ======================== NAV MENU ====================== -->
 
-    <div class="nav__menu" id="nav-menu"></div>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li class="dropdown__item">
+          <div class="nav__link">Książki<i class="ri-arrow-down-s-line"></i></div>
+          <li><a href="#" class="nav__link">Grafika</a></li>
+          <li><a href="#" class="nav__link">O Mnie</a></li>
+          <li><a href="#" class="nav__link">Kontakt</a></li>
+        </li>
+      </ul>
+    </div>
   </nav>
-</header>
 
-<!-- ======================== END OF HEADER ====================== -->
+  <!-- ======================== END OF HEADER ====================== -->
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 
     /* ======================= VARIABLES ====================== */
-  :root {
-    --header-height: 3.5rem;
-  }
+    :root {
+      --header-height: 3.5rem;
+    }
     /* ======================= END OF VARIABLES ====================== */
 
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow:
-      0 1px 0 rgba(0, 0, 0, 0.04),
-      0 8px 24px rgba(0, 0, 0, 0.06);
-    z-index: 1000;
-  }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.04),
+        0 8px 24px rgba(0, 0, 0, 0.06);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
 
-  /* ======================= NAV ====================== */
+    /* ======================= NAV ====================== */
 
-  .nav {
-    height: var(--header-height);
-  }
+    .nav {
+      height: var(--header-height);
+    }
 
-  
-</style>
+    /* ======================= CHANGE OF ICONS COLOR ====================== */
+    /* .nav__burger,
+  .nav__close {
+    color: lightcoral;
+  } */
+
+    .nav__data {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 100%;
+      padding-inline: 1.5rem;
+    }
+
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 0.25rem;
+    }
+
+    .nav__toggle {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      /* background-color: gray; */
+    }
+
+    .nav__burger,
+    .nav__close {
+      position: absolute;
+      width: max-content;
+      height: max-content;
+      inset: 0;
+      margin: auto;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition:
+        opacity 0.1s,
+        transform 0.4s;
+    }
+
+    .nav__close {
+      opacity: 0;
+    }
+  </style>
+</header>
