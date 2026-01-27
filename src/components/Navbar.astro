@@ -4,299 +4,58 @@ import InstagramLogo from "../assets/icons/instagram-logo.astro";
 import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
 ---
 
-  <header>
-  <div class="header-wrap">
-    <div class="bw-logo"></div>
-    <nav>
-      <div class="nav-element">
-        <a href="#www">WWW</a>
-      </div>
-      <div class="nav-element">
-        <a href="#gfx">GRAFIKA</a>
-      </div>
-      <div class="nav-element">
-        <a href="#books">KSIĄŻKI</a>
-      </div>
-      <div class="nav-element">
-        <a href="#about">O MNIE</a>
-      </div>
-      <div class="nav-element">
-        <a href="#contact">KONTAKT</a>
-      </div>
-    </nav>
-    <div class="social-icons-wrap">
-      <div class="social-links">
-       
-        <div class="social-logo">
-          <a href="http://www.behance.com/blazejwilczynski" target="_blank"
-            ><BehanceLogo /></a
-          >
-        </div>
-    
-        <div class="social-logo">
-          <a href="http://www.instagram.com/blazej_wilczynski" target="_blank"
-            ><InstagramLogo /></a>
-        </div>
+<!-- ======================== HEADER ====================== -->
+<header class="header">
+  <nav class="nav container">
+    <div class="nav__data">
+      <a href="#" class="nav__logo">
+        <img
+          src={BWLogo.src}
+          width={BWLogo.width}
+          height={BWLogo.height}
+          alt="BW logo"
+        />
+      </a>
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-2-line nav__burger"></i>
+        <i class="ri-close-line nav__close"></i>
       </div>
     </div>
 
-    <!-- start of code of hamburger toggler -->
+    <!-- ======================== NAV MENU ====================== -->
 
-    <div class="menu-wrap">
-      <input type="checkbox" class="toggler" />
-      <div class="hamburger">
-        <div></div>
-      </div>
-      <div class="menu">
-        <div>
-          <div>
-            <ul>
-              <li><a href="#www">WWW</a></li>
-              <li><a href="#gfx">GRAFIKA</a></li>
-              <li><a href="#books">KSIĄŻKI</a></li>
-              <li><a href="#about">O MNIE</a></li>
-              <li><a href="#contact">KONTAKT</a></li>
-            </ul>
-            <div class="social-icons-wrap-mobile">
-            <div class="social-links-mobile">
-              <div class="social-logo-mobile">
-                <a
-                  href="http://www.behance.com/blazejwilczynski"
-                  target="_blank"
-                  ><BehanceLogo /></a>
-              </div>
-              <div class="social-logo-mobile">
-                <a
-                  href="http://www.instagram.com/blazej_wilczynski"
-                  target="_blank"
-                  ><InstagramLogo /></a>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end of code of hamburger -->
-  </div>
+    <div class="nav__menu" id="nav-menu"></div>
+  </nav>
 </header>
-     <style>
 
+<!-- ======================== END OF HEADER ====================== -->
 
-header {
-  /* background: #F1F1F1; */
-  height: 35px;
-  max-width: 1215px;
-  /* background-color: lightsalmon; */
-  margin: 0 auto;
-  /* padding-top: 16px; */
-  /* padding-left: 25px; */
-  /* display: flex; */
-  align-items: center;
-  color: var(--base-text-color);
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 16px;
-}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 
-.header-wrap {
-  display: flex;
-  width: 100%;
-}
+    /* ======================= VARIABLES ====================== */
+  :root {
+    --header-height: 3.5rem;
+  }
+    /* ======================= END OF VARIABLES ====================== */
 
-.bw-logo {
-  display: inline-block;
-  height: 25px;
-  width: 42px;
-  //margin-left: 25px;
-  margin-right: 25px;
-  margin-top: 2px;
-  background: url("../assets/icons/bw-logo-25px-42px.svg");
-  background-size: cover;
-}
-
-nav {
-  width: 450px;
-  margin-top: 5px;
-  //background: lightseagreen;
-}
-
-.nav-element {
-  display: inline-block;
-  height: 25px;
-  //width: 40px;
-  margin-left: 25px;
-  //background: lightskyblue;
-}
-
-.nav-element > a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.4s ease;
-}
-
-.nav-element > a:hover {
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.5;
-}
-
-.social-icons-wrap {
-  display: flex;
-  justify-content: flex-end;
-  width: -webkit-calc(100% - 530px);
-  width: -moz-calc(100% - 530px);
-  width: calc(100% - 530px);
-  height: 25px;
-  margin-top: 5px;
-  //background: lightpink;
-}
-
-.social-links {
-  display: flex;
-  justify-content: space-between;
-  width: 112px;
-  height: 25px;
-  //background: lightseagreen;
-}
-
-.social-logo {
-  height: 21px;
-  width: 21px;
-  background-repeat: no-repeat;
-  //background: lightsalmon;
-}
-
-.social-logo-dribbble {
-  height: 21px;
-  width: 21px;
-  background-repeat: no-repeat;
-  //background: lightsalmon;
-}
-
-.social-logo path {
-  fill: rgba(0, 0, 0, 0.75);
-  transition: all 0.4s ease;
-}
-
-.social-logo circle {
-  fill: rgba(0, 0, 0, 0.75);
-  transition: all 0.4s ease;
-}
-
-.social-logo:hover path {
-  fill: rgba(0, 0, 0, 0.55);
-}
-
-.social-logo:hover circle {
-  fill: rgba(0, 0, 0, 0.55);
-}
-
-
-
-
-/* Below repated css for mobile-social-icons to avoid transition effect (0.4s of visible icons after
-closing menu. Also allows to change size of icons on mobile devices */
-
-.social-icons-wrap-mobile {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 35px;
-  margin-top: 50px;
-  //background: lightpink;
-}
-
-.social-links-mobile {
-  display: flex;
-  justify-content: space-between;
-  width: 150px;
-  height: 35px;
-  //background: lightseagreen;
-}
-
-.social-logo-mobile {
-  height: 25px;
-  width: 25px;
-  background-repeat: no-repeat;
-  //background: lightsalmon;
-}
-
-.social-logo-dribbble-mobile {
-  height: 25px;
-  width: 25px;
-  background-repeat: no-repeat;
-  //background: lightsalmon;
-}
-
-.social-logo-mobile path {
-  fill: #F1F1F1;
-}
-
-.social-logo-mobile circle {
-  fill: #F1F1F1;
-}
-
-.social-logo-mobile:hover path {
-  fill: rgba(255, 255, 255, 0.55);
-}
-
-.social-logo-mobile:hover circle {
-  fill:rgba(255, 255, 255, 0.55);
-}
-
-.social-logo-dribbble-mobile path {
-  stroke: #F1F1F1;
-}
-
-.social-logo-dribbble-mobile circle {
-  stroke: #F1F1F1;
-}
-
-.social-logo-dribbble-mobile:hover path {
-  stroke: rgba(255, 255, 255, 0.55);
-}
-
-.social-logo-dribbble-mobile:hover circle {
-  stroke: rgba(255, 255, 255, 0.55);
-}
-
-/* Start of responsive header */
-
-@media screen and (max-width: 1285px) {
-  .bw-logo {
-    margin-left: 25px;
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.04),
+      0 8px 24px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
   }
 
-  .social-icons-wrap {
-    margin-right: 5px;
-  }
-}
+  /* ======================= NAV ====================== */
 
-@media screen and (max-width: 1225px) {
-  .social-icons-wrap {
-    margin-right: 20px;
-  }
-}
-
-@media screen and (max-width: 1030px) {
-  .social-icons-wrap {
-    width: -webkit-calc(100% - 560px);
-    width: -moz-calc(100% - 560px);
-    width: calc(100% - 560px);
-  }
-}
-
-@media screen and (max-width: 765px) {
-  nav {
-    display: none;
+  .nav {
+    height: var(--header-height);
   }
 
-  .social-icons-wrap {
-    display: none;
-  }
-}
-
-
-
-     </style>
+  
+</style>

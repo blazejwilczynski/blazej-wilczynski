@@ -1,0 +1,44 @@
+<section class="scroll-test">
+  <h2>Scroll Test Section</h2>
+  <p>
+    To jest sekcja testowa (1000px height), żeby sprawdzić fixed navbar,
+    hover efekty i zachowanie przy scrollu.
+  </p>
+</section>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+  .scroll-test {
+    width: 100%;
+    height: 200px;
+    padding-top: 140px; /* zapas pod fixed header */
+    background: salmon;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: center;
+    color: #111;
+  }
+
+  .scroll-test h2 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #3a2f2a;
+  }
+
+  .scroll-test p {
+    margin-top: 16px;
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.85;
+    color: #3a2f2a;
+  }
+</style>
