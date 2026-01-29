@@ -20,6 +20,25 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
         <i class="ri-menu-2-line nav__burger"></i>
         <i class="ri-close-line nav__close"></i>
       </div>
+      <div class="socials">
+        <a
+          class="social-logo"
+          href="http://www.behance.com/blazejwilczynski"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BehanceLogo />
+        </a>
+
+        <a
+          class="social-logo"
+          href="http://www.instagram.com/blazejwilczynski"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <InstagramLogo />
+        </a>
+      </div>
     </div>
 
     <!-- ======================== NAV MENU ====================== -->
@@ -28,94 +47,246 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
       <ul class="nav__list">
         <li><a href="#" class="nav__link">Home</a></li>
         <li class="dropdown__item">
-          <div class="nav__link">Książki<i class="ri-arrow-down-s-line"></i></div>
-          <li><a href="#" class="nav__link">Grafika</a></li>
-          <li><a href="#" class="nav__link">O Mnie</a></li>
-          <li><a href="#" class="nav__link">Kontakt</a></li>
+          <div class="nav__link">
+            Książki <i class="ri-arrow-down-s-line"></i>
+          </div>
         </li>
+        <li><a href="#" class="nav__link">Grafika</a></li>
+        <li><a href="#" class="nav__link">O Mnie</a></li>
+        <li><a href="#" class="nav__link">Kontakt</a></li>
       </ul>
     </div>
   </nav>
+</header>
 
-  <!-- ======================== END OF HEADER ====================== -->
+<!-- ======================== END OF HEADER ====================== -->
 
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 
-    /* ======================= VARIABLES ====================== */
-    :root {
-      --header-height: 3.5rem;
-    }
-    /* ======================= END OF VARIABLES ====================== */
+  /* ======================= VARIABLES ====================== */
+  :root {
+    --header-height: 3.5rem;
+  }
+  /* ======================= END OF VARIABLES ====================== */
 
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow:
-        0 1px 0 rgba(0, 0, 0, 0.04),
-        0 8px 24px rgba(0, 0, 0, 0.06);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-    }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.04),
+      0 8px 24px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+  }
 
-    /* ======================= NAV ====================== */
+  /* ======================= NAV ====================== */
 
-    .nav {
-      height: var(--header-height);
-    }
+  .nav {
+    height: var(--header-height);
+  }
 
-    /* ======================= CHANGE OF ICONS COLOR ====================== */
-    /* .nav__burger,
+  /* ======================= CHANGE OF ICONS COLOR ====================== */
+  /* .nav__burger,
   .nav__close {
     color: lightcoral;
   } */
 
-    .nav__data {
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .container {
-      margin: 0 auto;
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+
+  .nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.25rem;
+  }
+
+  .nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: none;
+    /* background-color: gray; */
+  }
+
+  .nav__burger,
+  .nav__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition:
+      opacity 0.1s,
+      transform 0.4s;
+  }
+
+  .nav__close {
+    opacity: 0;
+  }
+
+  /* ======================= SOCIAL ICONS ====================== */
+
+  .socials {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+  }
+
+  .social-logo {
+    width: 21px;
+    height: 21px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(17, 17, 17, 0.7);
+    transition:
+      color 180ms ease,
+      transform 180ms ease,
+      filter 180ms ease;
+  }
+
+  .social-logo :global(svg) {
+    width: 21px;
+    height: 21px;
+    display: block;
+  }
+
+  .social-logo:hover {
+    color: var(--accent-red);
+    transform: translateY(-1px);
+    filter: drop-shadow(
+      0 6px 10px color-mix(in srgb, var(--accent-red) 22%, transparent)
+    );
+  }
+
+  .social-logo:active {
+    transform: translateY(0);
+    filter: none;
+  }
+
+  .social-logo:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent-red) 40%, transparent);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+
+  /* ======================= NAV FOR MOBILE ====================== */
+
+  @media screen and (max-width: 1118px) {
+    .nav__menu {
+      position: absolute;
+      left: 0;
+      top: 40px;
       width: 100%;
-      padding-inline: 1.5rem;
+      height: calc(100vh - 2.5rem);
+      overflow: auto;
+      pointer-events: none;
+      opacity: 0;
+      transition:
+        top 0.4s,
+        opacity 0.3s;
     }
 
-    .nav__logo {
-      display: inline-flex;
-      align-items: center;
-      column-gap: 0.25rem;
+    .nav__menu::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .nav__list {
+      background-color: white;
+      padding-top: 1rem;
+      width: 100%;
+      padding-inline-start: 0px;
+    }
+
+    .nav__list > li {
+      width: 100%;
+    }
+
+    .nav__link i {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .dropdown__menu {
+      width: 100%;
+    }
+
+    .socials {
+      display: none;
     }
 
     .nav__toggle {
-      position: relative;
-      width: 32px;
-      height: 32px;
-      /* background-color: gray; */
+      display: initial;
     }
 
-    .nav__burger,
-    .nav__close {
-      position: absolute;
-      width: max-content;
-      height: max-content;
-      inset: 0;
-      margin: auto;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition:
-        opacity 0.1s,
-        transform 0.4s;
+    .nav__link {
+      display: flex;
+      color: var(--light--text-color);
+      font-weight: 500;
+      font-size: 18px;
+      padding: 1.25rem 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s;
     }
 
-    .nav__close {
+    .nav__link:hover {
+      background-color: var(--grey-background);
+    }
+
+    /* ============== SHOW MENU ============= */
+
+    .show-menu {
+      opacity: 1;
+      top: 40px;
+      pointer-events: initial;
+    }
+
+    /* ============== SHOW ICON ============= */
+
+    .show-icon .nav__burger {
       opacity: 0;
+      transform: rotate(90deg);
     }
-  </style>
-</header>
+
+    .show-icon .nav__close {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+  }
+</style>
+
+<script is:inline>
+  // ================== SHOW MENU SCRIPT =================
+
+  const showMenu = (toggleId, navId) => {
+    const toggle = document.getElementById(toggleId),
+      nav = document.getElementById(navId);
+
+    toggle.addEventListener("click", () => {
+      // Adding show-menu to nav menu
+      nav.classList.toggle("show-menu");
+      // Adding show-icon to show and hide menu icon
+      toggle.classList.toggle("show-icon");
+    });
+  };
+
+  showMenu("nav-toggle", "nav-menu");
+</script>

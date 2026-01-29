@@ -3,6 +3,10 @@
   --base-text-color: rgb(60, 60, 60);
   --base-text-fade: rgba(0, 0, 0, 0.55);
   --creepy-pink: #EF8181;
+  --light-text-color: #2E2E39;
+  --dark-background-color: #0D1117;
+  --dark--text-color: #C9D1D9;
+  --grey-background: #F6F8FA;
 
   --red-base: rgba(236, 50, 96, 0.9);
   --red-base-fade: #F27493;
