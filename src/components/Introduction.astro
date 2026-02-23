@@ -1,10 +1,33 @@
 ---
 import BlazejCzarusia from "../assets/images/blazej_czarusia.jpg";
+import Wave from "../assets/images/wave_sketch.png";
+import Smile from "../assets/images/smile_sketch.png";
 ---
 
 <div class="introduction">
   <div class="introduction__wrapper">
-    <div class="description"></div>
+    <div class="description">
+      <div class="description__top__row__wrapper">
+        <div class="wave"><img src={Wave.src} alt="Wave" /></div>
+        <div class="red__box"></div>
+      </div>
+      <div class="greeting__wrapper">
+        Cześć <div class="line__greeting"></div>
+      </div>
+      <div class="about__me__text">
+        <p>Nazywam się Błażej Wilczyński.</p>
+        <p>Piszę książki i tworzę grafikę.</p>
+        <p>Gwarantuję zwroty akcji, suchary oraz dużo kolorków.</p>
+        <p>
+          W wolnych chwilach gram na gitarze szlagiery zespołów Metallica,
+          The Police i Durry.
+        </p>
+      </div>
+      <div class="smile__wrapper">
+        <img src={Smile.src} alt="Wave" />
+      </div>
+      <div class="line__under__smile"></div>
+    </div>
   </div>
   <div class="photo__wrapper">
     <div class="photo__bobek">
@@ -15,7 +38,7 @@ import BlazejCzarusia from "../assets/images/blazej_czarusia.jpg";
 
 <style>
   .introduction {
-    height: 800px;
+    height: 1000px;
     width: 100%;
     display: flex;
   }
@@ -38,7 +61,7 @@ import BlazejCzarusia from "../assets/images/blazej_czarusia.jpg";
     height: 100%;
     width: 100%;
     max-width: 590px;
-    background-color: lightcoral;
+    /* background-color: lightpink; */
     margin-left: auto;
     box-sizing: border-box;
     padding: 45px;
@@ -60,6 +83,73 @@ import BlazejCzarusia from "../assets/images/blazej_czarusia.jpg";
     object-fit: cover;
     object-position: center;
     position: absolute;
-    object-position: center 15%; 
+    object-position: center 15%;
+  }
+
+  .description__top__row__wrapper {
+    height: 60px;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .red__box {
+    height: 40px;
+    width: 40px;
+    background-color: var(--red-base);
+  }
+
+  .greeting__wrapper {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 12px;
+    font-weight: 400;
+    font-size: 2.4rem;
+    margin-top: 140px;
+  }
+
+  .line__greeting {
+    height: 3px;
+    flex: 1;
+    width: 340px;
+    margin-bottom: 10px;
+    background: var(--base-text-color);
+    max-width: 340px;
+  }
+
+  .about__me__text {
+    margin-top: 60px;
+    max-width: 440px;
+    line-height: 1.5;
+  }
+
+  .about__me__text p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 1.7rem;
+  }
+
+  .smile__wrapper {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .smile__wrapper img {
+    height: 65px;
+    padding-right: 100px;
+  }
+
+  .line__under__smile {
+    height: 3px;
+    width: 200px;
+    margin-bottom: 10px;
+    background: var(--base-text-color);
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: 5px;
   }
 </style>
