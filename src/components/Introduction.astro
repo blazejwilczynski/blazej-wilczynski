@@ -27,6 +27,12 @@ import Smile from "../assets/images/smile_sketch.png";
         <img src={Smile.src} alt="Wave" />
       </div>
       <div class="line__under__smile"></div>
+      <div class="button__wrapper">
+        <a href="#books" class="button__start">
+  <span>Zaczynamy</span>
+</a>
+  </button>
+      </div>
     </div>
   </div>
   <div class="photo__wrapper">
@@ -38,7 +44,7 @@ import Smile from "../assets/images/smile_sketch.png";
 
 <style>
   .introduction {
-    height: 1000px;
+    height: 900px;
     width: 100%;
     display: flex;
   }
@@ -61,7 +67,7 @@ import Smile from "../assets/images/smile_sketch.png";
     height: 100%;
     width: 100%;
     max-width: 590px;
-    /* background-color: lightpink; */
+    /* background-color: lightpink;  */
     margin-left: auto;
     box-sizing: border-box;
     padding: 45px;
@@ -107,7 +113,7 @@ import Smile from "../assets/images/smile_sketch.png";
     gap: 12px;
     font-weight: 400;
     font-size: 2.4rem;
-    margin-top: 140px;
+    margin-top: 80px;
   }
 
   .line__greeting {
@@ -133,7 +139,7 @@ import Smile from "../assets/images/smile_sketch.png";
 
   .smile__wrapper {
     width: 100%;
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     justify-content: flex-end;
   }
@@ -152,4 +158,98 @@ import Smile from "../assets/images/smile_sketch.png";
     margin-right: 30px;
     margin-top: 5px;
   }
+
+  .button__wrapper {
+    width: 100%;
+    /* height: 20px; */
+    /* background-color: lightsalmon; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    margin-top: 50px;
+  }
+
+  /* ======================== Button Styling ========================= */
+
+  .button__start {
+    position: relative;
+    padding: 20px 52px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: #e8415a;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    transition: color 0.35s ease;
+  }
+
+  /* Sliding fill overlay */
+  .button__start::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #1a1a1a;
+    transform: translateX(-101%);
+    transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 0;
+  }
+
+  .button__start:hover::before {
+    transform: translateX(0);
+  }
+
+  /* Sparkle particles */
+  .button__start::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, #fff 1px, transparent 1px),
+      radial-gradient(circle, #fff 1px, transparent 1px),
+      radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 8px 8px;
+    background-position: 20% 40%, 60% 20%, 80% 70%;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .button__start:hover::after {
+    opacity: 0.12;
+  }
+
+  .button__start span {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .button__start:hover span {
+    transform: scale(1.06);
+  }
+
+  /* Shadow lift */
+  .button__start {
+    box-shadow: 4px 4px 0px #c52d44;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, color 0.35s ease;
+  }
+
+  .button__start:hover {
+    box-shadow: 8px 8px 0px #111;
+    transform: translate(-2px, -2px);
+  }
+
+  .button__start:active {
+    box-shadow: 2px 2px 0px #111;
+    transform: translate(2px, 2px);
+  }
+
+  /* ======================== End of Button Styling ========================= */
+
 </style>
