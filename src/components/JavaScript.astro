@@ -1,0 +1,70 @@
+---
+
+---
+
+<div class="javascript-learning">
+  <div class="javascript-wrapper">
+    <button id="btn">Kliknij</button>
+    <p id="wynik"></p>
+  </div>
+</div>
+
+<style>
+  .javascript-learning {
+    height: 900px;
+    width: 100%;
+    display: flex;
+    background-color: lightsalmon;
+  }
+
+  .javascript-wrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("btn");
+  const wynik = document.getElementById("wynik");
+
+  btn.addEventListener("click", () => {
+    wynik.textContent = "Kliknięto!";
+  });
+
+  const sentence = "hello mom";
+  let numberOfEggs = 3;
+  // numberOfEggs = 8;
+
+  let totalGroceries = numberOfEggs + 7;
+
+  console.log(sentence);
+  console.log(numberOfEggs);
+  console.log(totalGroceries);
+
+  let friends = {
+    james: "super cool",
+    lucy: "isn't so cool",
+    yourNumber: 7,
+  };
+  console.log(friends);
+
+  let metallicaAlbums = [
+    1983, 1985, 1986, 1988, 1991, 1996, 1997, 1998, 2004, 2007,
+  ];
+
+  function myFirstFunction() {
+    console.log(metallicaAlbums);
+  }
+  myFirstFunction();
+
+  function mySecondFunction(value, secondValue) {
+    console.log(value * secondValue);
+  }
+  mySecondFunction(7, 7);
+
+  let condition1 = true;
+  let condition2 = false;
+  console.log(condition1 || condition2);
+
+</script>

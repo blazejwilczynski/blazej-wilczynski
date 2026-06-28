@@ -19,8 +19,8 @@ import Smile from "../assets/images/smile_sketch.png";
         <p>Piszę książki i tworzę grafikę.</p>
         <p>Gwarantuję zwroty akcji, suchary oraz dużo kolorków.</p>
         <p>
-          W wolnych chwilach gram na gitarze szlagiery zespołów Metallica,
-          The Police i Durry.
+          W wolnych chwilach gram na gitarze utwory zespołów Metallica,
+          The Police, Durry oraz Highly Suspect.
         </p>
       </div>
       <div class="smile__wrapper">
@@ -29,9 +29,8 @@ import Smile from "../assets/images/smile_sketch.png";
       <div class="line__under__smile"></div>
       <div class="button__wrapper">
         <a href="#books" class="button__start">
-  <span>Zaczynamy</span>
-</a>
-  </button>
+          <span>Zaczynamy</span>
+        </a>
       </div>
     </div>
   </div>
@@ -134,7 +133,7 @@ import Smile from "../assets/images/smile_sketch.png";
   .about__me__text p {
     margin-block-start: 0;
     margin-block-end: 0;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .smile__wrapper {
@@ -174,7 +173,7 @@ import Smile from "../assets/images/smile_sketch.png";
   .button__start {
     position: relative;
     padding: 20px 52px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -189,7 +188,7 @@ import Smile from "../assets/images/smile_sketch.png";
 
   /* Sliding fill overlay */
   .button__start::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: #1a1a1a;
@@ -204,7 +203,7 @@ import Smile from "../assets/images/smile_sketch.png";
 
   /* Sparkle particles */
   .button__start::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background-image:
@@ -212,7 +211,10 @@ import Smile from "../assets/images/smile_sketch.png";
       radial-gradient(circle, #fff 1px, transparent 1px),
       radial-gradient(circle, #fff 1px, transparent 1px);
     background-size: 8px 8px;
-    background-position: 20% 40%, 60% 20%, 80% 70%;
+    background-position:
+      20% 40%,
+      60% 20%,
+      80% 70%;
     opacity: 0;
     transition: opacity 0.3s ease 0.2s;
     z-index: 1;
@@ -237,7 +239,10 @@ import Smile from "../assets/images/smile_sketch.png";
   /* Shadow lift */
   .button__start {
     box-shadow: 4px 4px 0px #c52d44;
-    transition: box-shadow 0.2s ease, transform 0.2s ease, color 0.35s ease;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease,
+      color 0.35s ease;
   }
 
   .button__start:hover {
@@ -252,4 +257,39 @@ import Smile from "../assets/images/smile_sketch.png";
 
   /* ======================== End of Button Styling ========================= */
 
+  /* ---------------------------- 1280 px ---------------------------------- */
+
+  @media (max-width: 1280px) {
+    .description {
+      padding-left: 80px;
+    }
+  }
+
+  /* ---------------------------- 768 px ---------------------------------- */
+
+  @media (max-width: 768px) {
+    .introduction {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .introduction__wrapper {
+      width: 100%;
+    }
+
+    .description {
+      margin: 0 auto;
+      max-width: 500px;
+      padding: 30px 20px;
+    }
+
+    .photo__wrapper {
+      width: 100%;
+      height: 800px; /* ustaw według potrzeb */
+    }
+
+    .line__greeting {
+      width: 290px;
+    }
+  }
 </style>
