@@ -24,17 +24,17 @@ import Smile from "../assets/images/smile_sketch.png";
         </p>
       </div>
       <div class="smile__wrapper">
-        <img src={Smile.src} alt="Wave" />
+        <img src={Smile.src} alt="Smile" />
       </div>
       <div class="line__under__smile"></div>
       <div class="button__wrapper">
-        <a href="#books" class="button__start">
+        <a href="#bobek__photo" class="button__start">
           <span>Zaczynamy</span>
         </a>
       </div>
     </div>
   </div>
-  <div class="photo__wrapper">
+  <div class="photo__wrapper" id="bobek__photo">
     <div class="photo__bobek">
       <img src={BlazejCzarusia.src} alt="Błażej Czarusia" />
     </div>
@@ -291,5 +291,119 @@ import Smile from "../assets/images/smile_sketch.png";
     .line__greeting {
       width: 290px;
     }
+  }
+
+  /* ---------------------------- 575 px ---------------------------------- */
+
+  @media (max-width: 575px) {
+    .description {
+      margin: 0 auto;
+      max-width: 450px;
+      padding: 30px 20px;
+    }
+
+    .wave {
+      width: 70px;
+    }
+
+    .wave img {
+      width: 100%;
+      height: auto;
+    }
+
+    .red__box {
+      height: 35px;
+      width: 35px;
+    }
+
+    .greeting__wrapper {
+      /* display: inline-flex;
+    align-items: flex-end;
+    gap: 12px;
+    font-weight: 400; */
+      font-size: 2.2rem;
+      /* margin-top: 80px; */
+    }
+  }
+
+  /* ---------------------------- 475 px ---------------------------------- */
+
+  @media (max-width: 475px) {
+    .description {
+      margin: 0 auto;
+      max-width: 350px;
+      padding: 30px 0px;
+    }
+
+    .wave {
+      width: 70px;
+    }
+
+    .wave img {
+      width: 100%;
+      height: auto;
+    }
+
+    .red__box {
+      height: 35px;
+      width: 35px;
+    }
+
+    .line__greeting {
+      width: 220px;
+    }
+
+    .greeting__wrapper {
+      /* display: inline-flex;
+    align-items: flex-end;
+    gap: 12px;
+    font-weight: 400; */
+      font-size: 2rem;
+      /* margin-top: 80px; */
+    }
+    .about__me__text p {
+      font-size: 1.4rem;
+    }
+
+
+  /* ---------------------------- 420 px ---------------------------------- */
+
+  @media (max-width: 420px) {
+    .description {
+      margin: 0 auto;
+      max-width: 310px;
+      padding: 30px 0px;
+    }
+
+    .wave {
+      width: 70px;
+    }
+
+    .wave img {
+      width: 100%;
+      height: auto;
+    }
+
+    .red__box {
+      height: 35px;
+      width: 35px;
+    }
+
+    .line__greeting {
+      width: 220px;
+    }
+
+    .greeting__wrapper {
+      /* display: inline-flex;
+    align-items: flex-end;
+    gap: 12px;
+    font-weight: 400; */
+      font-size: 2rem;
+      /* margin-top: 80px; */
+    }
+    .about__me__text p {
+      font-size: 1.4rem;
+    }
+
   }
 </style>

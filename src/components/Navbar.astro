@@ -1,6 +1,7 @@
 ---
 import BehanceLogo from "../assets/icons/behance-logo.astro";
 import InstagramLogo from "../assets/icons/instagram-logo.astro";
+import WattpadLogo from "../assets/icons/wattpad-logo.astro";
 import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
 ---
 
@@ -35,13 +36,13 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
               </li>
               <li>
                 <a href="#" class="dropdown__link__desktop"
-                  >Skeleton <i class="ri-skull-2-line"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="dropdown__link__desktop"
                   >Rockstar <i class="ri-flashlight-line"></i></a
                 >
+              </li>
+               <li>
+                <a href="#" class="dropdown__link__desktop"
+                  >Skeleton <i class="ri-skull-2-line"></i>
+                </a>
               </li>
             </ul>
           </li>
@@ -75,6 +76,15 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
         >
           <InstagramLogo />
         </a>
+
+          <a
+          class="social-logo wattpad-logo"
+          href="http://www.wattpad.com/bobekpisze"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <WattpadLogo />
+        </a>
       </div>
     </div>
 
@@ -96,13 +106,13 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
             </li>
             <li>
               <a href="#" class="dropdown__link"
-                >Skeleton <i class="ri-skull-2-line"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="dropdown__link"
                 >Rockstar <i class="ri-flashlight-line"></i></a
               >
+            </li>
+              <li>
+              <a href="#" class="dropdown__link"
+                >Skeleton <i class="ri-skull-2-line"></i>
+              </a>
             </li>
           </ul>
         </li>
@@ -127,6 +137,15 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
               rel="noreferrer"
             >
               <InstagramLogo />
+            </a>
+
+              <a
+              class="social-logo__mobile"
+              href="http://www.wattpad.com/bobekpisze"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <WattpadLogo />
             </a>
           </div>
         </li>
@@ -241,6 +260,10 @@ import BWLogo from "../assets/icons/bw-logo-25px-42px.svg";
       width: 21px;
       height: 21px;
       display: block;
+    }
+
+    .wattpad-logo {
+      height: 23px;
     }
 
     .social-logo:hover {
