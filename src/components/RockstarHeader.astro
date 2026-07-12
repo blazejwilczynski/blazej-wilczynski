@@ -24,9 +24,162 @@ import HeaderElement3 from "../assets/images/header-element-3.svg";
   </div>
 </section>
 
-<style>
+<style define:vars={{
+  headerAxeUrl: `url(${HeaderAxe.src})`,
+  headerCoffeeUrl: `url(${HeaderCoffee.src})`,
+  headerDenaturatUrl: `url(${HeaderDenaturat.src})`,
+  headerMain310Url: `url(${HeaderMainIcons310.src})`,
+  headerMain650Url: `url(${HeaderMainIcons650.src})`,
+  headerElement1Url: `url(${HeaderElement1.src})`,
+  headerElement2Url: `url(${HeaderElement2.src})`,
+  headerElement3Url: `url(${HeaderElement3.src})`,
+}}>
+
+.rockstar {
+  height: 500px;
+  width: 100%;
+  background-color: #FECF46;
+  position: relative;
+  padding-top: 70px;
+}
+
+.rockstar .header-elements-wrap {
+  width: 100%;
+  height: 370px;
+  /* margin-top: 40px; */
+  display: flex;
+  justify-content: center;
+}
+
+.rockstar .header-elements-wrap .header-elements-center {
+  height: 370px;
+  width: 1055px;
+  z-index: 10;
+}
+
+.rockstar .header-elements-wrap .header-elements-center .header-elements-main {
+  display: inline-block;
+  width: 650px;
+  height: 370px;
+  background-image: var(--headerMain650Url);
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.rockstar .header-elements-wrap .header-elements-center .header-elements-axe {
+  display: inline-block;
+  width: 100px;
+  height: 370px;
+  background-image: var(--headerAxeUrl);
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.rockstar .header-elements-wrap .header-elements-center .header-elements-denaturat {
+  display: inline-block;
+  width: 120px;
+  height: 370px;
+  background-image: var(--headerDenaturatUrl);
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.rockstar .header-elements-wrap .header-elements-center .header-elements-coffe {
+  display: inline-block;
+  width: 160px;
+  height: 370px;
+  background-image: var(--headerCoffeeUrl);
+  background-repeat: no-repeat;
+  margin-left: 0px;
+  padding: 0;
+}
+
+.rockstar .header-element-1 {
+  height: 96px;
+  width: 800px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: var(--headerElement1Url);
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.99;
+}
+
+.rockstar .header-element-2 {
+  height: 155px;
+  width: 476px;
+  position: absolute;
+  top: 345px;
+  right: 150px;
+  background-image: var(--headerElement2Url);
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.99;
+}
+
+.rockstar .header-element-3 {
+  height: 225px;
+  width: 342px;
+  position: absolute;
+  top: 275px;
+  left: 35px;
+  background-image: var(--headerElement3Url);
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.99;
+}
+
+/* Media query 1200px */
+@media screen and (max-width: 1200px) {
+  .rockstar .header-elements-wrap .header-elements-center .header-elements-coffe {
+    display: none;
+  }
+
+  .rockstar .header-elements-wrap .header-elements-center {
+    width: 895px;
+  }
+}
+
+/* Media query 950px */
+@media screen and (max-width: 1050px) {
+  .rockstar .header-elements-wrap .header-elements-center .header-elements-denaturat {
+    display: none;
+  }
+
+  .rockstar .header-elements-wrap .header-elements-center {
+    width: 775px;
+  }
+}
 
 
 
-    
+/* Media query 800px – ukrywa ikonę siekiery */
+@media screen and (max-width: 900px) {
+  .rockstar .header-elements-wrap .header-elements-center .header-elements-axe {
+    display: none;
+  }
+
+  .rockstar .header-elements-wrap .header-elements-center {
+    width: 655px;
+  }
+}
+
+/* Media query 670px – pokazuje mobilne ikony w headerze */
+@media screen and (max-width: 770px) {
+  .rockstar .header-elements-wrap .header-elements-center {
+    width: 310px;
+  }
+
+  .rockstar .header-elements-wrap .header-elements-center .header-elements-main {
+    width: 310px;
+    background-image: var(--headerMain310Url);
+  }
+}
+
+
+
 </style>
