@@ -263,6 +263,46 @@ import Smile from "../assets/images/smile_sketch.png";
     .description {
       padding-left: 80px;
     }
+
+    .line__greeting {
+      width: 300px;
+    }
+  }
+
+  /* ---------------------------- 1100 px ---------------------------------- */
+
+  @media (max-width: 1100px) {
+    .description {
+      max-width: 525px;
+    }
+
+    .line__greeting {
+      width: 250px;
+    }
+  }
+
+  /* ---------------------------- 990 px ---------------------------------- */
+
+  @media (max-width: 990px) {
+    .about__me__text p {
+      font-size: 1.4rem;
+    }
+
+    .line__greeting {
+      width: 200px;
+    }
+  }
+
+  /* ---------------------------- 890 px ---------------------------------- */
+
+  @media (max-width: 890px) {
+    .about__me__text p {
+      font-size: 1.25rem;
+    }
+
+    .line__greeting {
+      width: 150px;
+    }
   }
 
   /* ---------------------------- 768 px ---------------------------------- */
@@ -364,7 +404,7 @@ import Smile from "../assets/images/smile_sketch.png";
     .about__me__text p {
       font-size: 1.4rem;
     }
-
+  }
 
   /* ---------------------------- 420 px ---------------------------------- */
 
@@ -390,7 +430,7 @@ import Smile from "../assets/images/smile_sketch.png";
     }
 
     .line__greeting {
-      width: 220px;
+      width: 200px;
     }
 
     .greeting__wrapper {
@@ -399,11 +439,64 @@ import Smile from "../assets/images/smile_sketch.png";
     gap: 12px;
     font-weight: 400; */
       font-size: 2rem;
-      /* margin-top: 80px; */
+      margin-top: 60px;
     }
     .about__me__text p {
       font-size: 1.4rem;
     }
 
+    .smile__wrapper {
+      width: 100%;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .smile__wrapper img {
+      height: 65px;
+      padding-right: 0px;
+    }
+
+    .line__under__smile {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5px;
+    }
+
+    .button__wrapper {
+      justify-content: center;
+      padding-right: 0;
+    }
+
+    /* ---------------------------- 360 px ---------------------------------- */
+    @media (max-width: 360px) {
+      .description {
+        max-width: 270px;
+      }
+
+      .greeting__wrapper {
+        margin-top: 40px;
+      }
+
+      .line__greeting {
+        width: 150px;
+      }
+
+      .about__me__text {
+        margin-top: 40px;
+      }
+
+      .about__me__text p {
+        font-size: 1.2rem;
+      }
+
+      .smile__wrapper {
+        margin-top: 40px;
+      }
+
+      .smile__wrapper img {
+        height: 60px;
+      }
+    }
   }
 </style>
