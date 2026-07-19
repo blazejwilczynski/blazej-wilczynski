@@ -4,12 +4,18 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
 
 <div class="rockstar-book">
   <div class="rockstar-book-wrapper">
-    <div
-      class="cover-container"
-      style={`background-image: url(${RockstarCover.src})`}
-    >
+    <div class="cover-container-wrapper">
+      <div
+        class="cover-container"
+        style={`background-image: url(${RockstarCover.src})`}
+      >
+      </div>
+      <div class="cover-plate"></div>
     </div>
-    <div class="book-read-container"></div>
+    <div class="book-read-container">
+      
+
+    </div>
   </div>
 </div>
 
@@ -33,21 +39,40 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
     justify-content: center;
   }
 
+  .cover-container-wrapper {
+    position: relative;
+    width: 439px;
+    height: 628px;
+  }
+
   .cover-container {
     height: 628px;
     width: 439px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    /* position: absolute; */
-    margin-left: 29px;
-    z-index: 100;
+    position: absolute; /* zamiast statycznego flow */
+    top: 0;
+    left: 0;
+    z-index: 2; /* wyżej niż plate */
+  }
+
+  .cover-plate {
+    height: 628px;
+    width: 439px;
+    background: var(--rockstar-orange); /* Twój brzoskwiniowy kolor */
+    position: absolute;
+    top: 25px; /* przesunięcie w dół */
+    right: 25px; /* przesunięcie w prawo (albo w lewo, zależy od kierunku) */
+    z-index: 1; /* niżej niż container */
   }
 
   .book-read-container {
     height: 90%;
     width: 50%;
     background-color: lightskyblue;
+    display: flex;
+  
   }
 </style>
 
