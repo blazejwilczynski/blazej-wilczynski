@@ -2,25 +2,35 @@
 
 ---
 
-<div class="javascript-learning">
-  <div class="javascript-wrapper">
-    <button id="btn">Kliknij</button>
-    <p id="wynik"></p>
-  </div>
+<div class="czarusia-wrapper">
+  <p>Czarusia header placholder</p>
 </div>
 
 <style>
-  .javascript-learning {
-    height: 900px;
+  .czarusia-wrapper {
+    height: 600px;
     width: 100%;
+    background: #141e30; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #243b55,
+      #141e30
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #243b55,
+      #141e30
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
-    background-color: lightsalmon;
+    justify-content: center;
+    align-items: center;
   }
 
-  .javascript-wrapper {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
+  .czarusia-wrapper p {
+    font-size: 32px;
+    color: white;
+    font-family: 'Manrope';
+    font-weight: 300;
   }
 </style>
 
