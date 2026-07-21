@@ -14,7 +14,7 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
     </div>
     <div class="book-read-container">
       <div class="rockstar-buttons-wrapper">
-        <button class="rockstar-download-button">
+        <a href="rockstar-bwilczynski.pdf" class="rockstar-download-button">
           <span>Pobierz PDF</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,16 +23,20 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
             height="23"
             width="23"
           >
-            <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"
+            <circle stroke-width="3" stroke="white" r="35.5" cy="37" cx="37"
             ></circle>
             <path
-              fill="black"
+              fill="white"
               d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
             ></path>
           </svg>
-        </button>
+        </a>
 
-        <button class="rockstar-download-button">
+        <a
+          href="https://www.wattpad.com/bobekpisze"
+          target="_blank"
+          class="rockstar-download-button"
+        >
           <span>Czytaj na Wattpadzie</span>
           <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
 
@@ -43,9 +47,27 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
           >
             <path
               d="M21.9718 8.10664C23.8006 5.49381 28.6239 -0.166157 31.6061 0.925207C32.2404 1.12555 32.8129 1.65932 32.9282 2.3458C33.3484 4.13626 31.8999 5.27105 29.2033 9.75839C25.9068 15.246 24.8949 18.8872 23.4327 20.354C20.5618 23.6267 14.7444 22.1851 15.4364 13.2552C11.9792 19.0217 11.1239 26.0532 5.27633 24.868C-0.860913 23.1714 -0.57396 8.41765 0.852572 4.61259C0.950053 4.12785 1.18621 3.69074 1.3949 3.25084C2.84889 0.380225 6.2182 0.362013 7.65434 2.06561C9.12755 3.81403 8.69781 7.40334 8.47127 9.75279C9.99253 7.0531 12.6328 3.1976 15.0698 1.28386C18.873 -1.60496 23.2638 0.261143 21.9718 8.10664Z"
-              fill="black"></path>
+              fill="white"></path>
           </svg>
-        </button>
+        </a>
+      </div>
+      <div class="rockstar-description">
+        <p>
+          Mikołaj właśnie kończy trzydzieści lat i&nbsp;nie dość, że postanawia iść
+          na studia, to w&nbsp;dodatku zamieszkuje w&nbsp;akademiku. Oczywiście nie jest
+          do końca przekonany do swojego pomysłu, ponieważ - jak sam twierdzi -
+          rozpocząć studia i&nbsp;zamieszkać w&nbsp;akademiku w&nbsp;wieku trzydziestu lat to
+          niemal to samo co skończyć osiemnastkę i&nbsp;na drugi dzień zapisać się do
+          przedszkolnej grupy starszaków.
+        </p>
+        <p>
+          Co więcej, Mikołaj zostaje posądzony o&nbsp;morderstwo, które na początku
+          wydawało się jedynie samobójstwem w&nbsp;akademikowej kuchni. Razem z
+        &nbsp;policjantem, który postanawia mu pomóc, musi odnaleźć zabójcę, a&nbsp;co
+          ważniejsze, przywrócić wiarę w&nbsp;zasadę, że „najlepsze imprezy zawsze
+          przenoszą się do kuchni".
+        </p>
+        <p>I&nbsp;gdzie tu jeszcze znaleźć czas, żeby zostać gwiazdą rocka?</p>
       </div>
     </div>
   </div>
@@ -54,7 +76,7 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
 <style>
   .rockstar-book {
     width: 100%;
-    height: 900px;
+    height: 800px;
     background-color: #f7f1eb;
     display: flex;
     align-items: center;
@@ -65,7 +87,7 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
     height: 800px;
     width: 100%;
     max-width: 1180px;
-    background-color: lightseagreen;
+    /* background-color: lightseagreen; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,16 +124,18 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
   .book-read-container {
     height: 90%;
     width: 50%;
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
     padding-top: 45px;
   }
 
   .rockstar-buttons-wrapper {
     height: 100px;
     width: 100%;
-    background-color: lightpink;
+    /* background-color: lightpink; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -120,20 +144,21 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
 
   .rockstar-download-button {
     cursor: pointer;
-    font-family: 'Manrope';
-    font-weight: 600;
+    font-family: "Manrope";
+    font-weight: 400;
+    color: white;
     transition: all 0.2s;
     padding: 10px 20px;
     border-radius: 100px;
-    background: #cfef00;
+    background: var(--rockstar-orange);
     border: 1px solid transparent;
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .rockstar-download-button:hover {
-    background: #c4e201;
+    background: #F07459;
   }
 
   .rockstar-download-button > svg {
@@ -148,6 +173,18 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
 
   .rockstar-download-button:active {
     transform: scale(0.95);
+  }
+
+  .rockstar-description {
+    width: 100%;
+    height: 200px;
+    /* background-color: lightcoral; */
+    padding: 20px 85px;
+  }
+
+  .rockstar-description p {
+    color: var(--base-text-color);
+    font-size: 18px;
   }
 </style>
 
