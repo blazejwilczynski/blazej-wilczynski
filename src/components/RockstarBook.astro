@@ -53,19 +53,19 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
       </div>
       <div class="rockstar-description">
         <p>
-          Mikołaj właśnie kończy trzydzieści lat i&nbsp;nie dość, że postanawia iść
-          na studia, to w&nbsp;dodatku zamieszkuje w&nbsp;akademiku. Oczywiście nie jest
-          do końca przekonany do swojego pomysłu, ponieważ - jak sam twierdzi -
-          rozpocząć studia i&nbsp;zamieszkać w&nbsp;akademiku w&nbsp;wieku trzydziestu lat to
-          niemal to samo co skończyć osiemnastkę i&nbsp;na drugi dzień zapisać się do
-          przedszkolnej grupy starszaków.
+          Mikołaj właśnie kończy trzydzieści lat i&nbsp;nie dość, że postanawia
+          iść na studia, to w&nbsp;dodatku zamieszkuje w&nbsp;akademiku.
+          Oczywiście nie jest do końca przekonany do swojego pomysłu, ponieważ 
+          –&nbsp;jak sam twierdzi –&nbsp;rozpocząć studia i&nbsp;zamieszkać w&nbsp;akademiku
+          w&nbsp;wieku trzydziestu lat to niemal to samo co skończyć osiemnastkę
+          i&nbsp;na drugi dzień zapisać się do przedszkolnej grupy starszaków.
         </p>
         <p>
-          Co więcej, Mikołaj zostaje posądzony o&nbsp;morderstwo, które na początku
-          wydawało się jedynie samobójstwem w&nbsp;akademikowej kuchni. Razem z
-        &nbsp;policjantem, który postanawia mu pomóc, musi odnaleźć zabójcę, a&nbsp;co
-          ważniejsze, przywrócić wiarę w&nbsp;zasadę, że „najlepsze imprezy zawsze
-          przenoszą się do kuchni".
+          Co więcej, Mikołaj zostaje posądzony o&nbsp;morderstwo, które na
+          początku wydawało się jedynie samobójstwem w&nbsp;akademikowej kuchni.
+          Razem z&nbsp;policjantem, który postanawia mu pomóc, musi odnaleźć
+          zabójcę, a&nbsp;co ważniejsze, przywrócić wiarę w&nbsp;zasadę, że
+          „najlepsze imprezy zawsze przenoszą się do kuchni".
         </p>
         <p>I&nbsp;gdzie tu jeszcze znaleźć czas, żeby zostać gwiazdą rocka?</p>
       </div>
@@ -84,7 +84,7 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
   }
 
   .rockstar-book-wrapper {
-    height: 800px;
+    height: 100%;
     width: 100%;
     max-width: 1180px;
     /* background-color: lightseagreen; */
@@ -158,7 +158,7 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
   }
 
   .rockstar-download-button:hover {
-    background: #F07459;
+    background: #f07459;
   }
 
   .rockstar-download-button > svg {
@@ -184,8 +184,192 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
 
   .rockstar-description p {
     color: var(--base-text-color);
-    font-size: 18px;
+    font-size: 19px;
   }
+
+  /* ---------------------------- 1200 px ---------------------------------- */
+
+  @media screen and (max-width: 1200px) {
+    .rockstar-book-wrapper {
+      max-width: 1100px;
+    }
+
+    .cover-container-wrapper {
+      position: relative;
+      width: 402px;
+      height: 575px;
+    }
+
+    .cover-container {
+      height: 575px;
+      width: 402px;
+    }
+
+    .cover-plate {
+      height: 575px;
+      width: 402px;
+    }
+
+    .rockstar-buttons-wrapper {
+      padding: 0 40px;
+    }
+
+    .rockstar-description {
+      padding: 20px 60px;
+    }
+  }
+
+  /* ---------------------------- 1100 px ---------------------------------- */
+
+  @media screen and (max-width: 1100px) {
+    .rockstar-book {
+      height: 700px;
+    }
+
+    .rockstar-book-wrapper {
+      max-width: 1000px;
+    }
+
+    .cover-container-wrapper {
+      width: 367px;
+      height: 525px;
+    }
+
+    .cover-container {
+      height: 525px;
+      width: 367px;
+    }
+
+    .cover-plate {
+      height: 525px;
+      width: 367px;
+    }
+
+    .book-read-container {
+      padding-top: 35px;
+    }
+
+    .rockstar-description {
+      padding: 10px 50px;
+    }
+
+    .rockstar-description p {
+      font-size: 17px;
+    }
+  }
+
+  /* ---------------------------- 1000 px ---------------------------------- */
+
+  @media screen and (max-width: 1000px) {
+    .rockstar-buttons-wrapper {
+      height: auto;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 15px;
+      padding-top: 25px;
+    }
+
+    .rockstar-description {
+      padding: 10px 40px;
+    }
+
+    .rockstar-description p {
+      font-size: 16px;
+    }
+  }
+  /* ---------------------------- 950 px ---------------------------------- */
+
+  @media screen and (max-width: 950px) {
+    .rockstar-book {
+      height: 1400px;
+    }
+
+    .rockstar-book-wrapper {
+      flex-direction: column;
+    }
+
+    .cover-container-wrapper {
+      margin-top: 50px;
+    }
+
+    .rockstar-buttons-wrapper {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 500px;
+    }
+
+    .book-read-container {
+      margin-top: 340px;
+      width: 600px;
+    }
+
+    .cover-container-wrapper {
+      position: relative;
+      width: 439px;
+      height: 628px;
+    }
+
+    .cover-container {
+      height: 628px;
+      width: 439px;
+    }
+
+    .cover-plate {
+      height: 628px;
+      width: 439px;
+    }
+
+    .rockstar-description {
+      margin-top: 30px;
+      padding: 10px 50px;
+    }
+
+    .rockstar-description p {
+      font-size: 19px;
+    }
+  }
+
+  /* ---------------------------- 615 px ---------------------------------- */
+
+  @media screen and (max-width: 615px) {
+
+    .rockstar-book {
+      height: 1375px;
+    }
+
+    .cover-container-wrapper {
+      width: 402px;
+      height: 575px;
+      margin-top: 60px;
+    }
+
+    .cover-container {
+      height: 575px;
+      width: 402px;
+    }
+
+    .cover-plate {
+      height: 575px;
+      width: 402px;
+    }
+
+     .book-read-container {
+      margin-top: 280px;
+      width: 500px;
+    }
+
+    .rockstar-description {
+      margin-top: 30px;
+      padding: 10px 35px;
+    }
+  }
+
+  /* ---------------------------- 515 px ---------------------------------- */
+
+    @media screen and (max-width: 515px) {
+
+    }
 </style>
 
 <!-- Button -->
