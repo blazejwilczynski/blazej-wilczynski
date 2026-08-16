@@ -55,10 +55,11 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
         <p>
           Mikołaj właśnie kończy trzydzieści lat i&nbsp;nie dość, że postanawia
           iść na studia, to w&nbsp;dodatku zamieszkuje w&nbsp;akademiku.
-          Oczywiście nie jest do końca przekonany do swojego pomysłu, ponieważ 
-          –&nbsp;jak sam twierdzi –&nbsp;rozpocząć studia i&nbsp;zamieszkać w&nbsp;akademiku
-          w&nbsp;wieku trzydziestu lat to niemal to samo co skończyć osiemnastkę
-          i&nbsp;na drugi dzień zapisać się do przedszkolnej grupy starszaków.
+          Oczywiście nie jest do końca przekonany do swojego pomysłu, ponieważ
+          –&nbsp;jak sam twierdzi –&nbsp;rozpocząć studia i&nbsp;zamieszkać
+          w&nbsp;akademiku w&nbsp;wieku trzydziestu lat to niemal to samo co
+          skończyć osiemnastkę i&nbsp;na drugi dzień zapisać się do
+          przedszkolnej grupy starszaków.
         </p>
         <p>
           Co więcej, Mikołaj zostaje posądzony o&nbsp;morderstwo, które na
@@ -333,7 +334,6 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
   /* ---------------------------- 615 px ---------------------------------- */
 
   @media screen and (max-width: 615px) {
-
     .rockstar-book {
       height: 1375px;
     }
@@ -354,7 +354,7 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
       width: 402px;
     }
 
-     .book-read-container {
+    .book-read-container {
       margin-top: 280px;
       width: 500px;
     }
@@ -367,9 +367,88 @@ import RockstarCover from "../assets/images/rockstar-cover.webp";
 
   /* ---------------------------- 515 px ---------------------------------- */
 
-    @media screen and (max-width: 515px) {
-
+  @media screen and (max-width: 515px) {
+    .cover-container-wrapper {
+      width: 315px;
+      height: 450px;
+      margin-top: 60px;
     }
+
+    .cover-container {
+      height: 450px;
+      width: 315px;
+    }
+
+    .cover-plate {
+      height: 450px;
+      width: 315px;
+    }
+
+    .rockstar-buttons-wrapper {
+      height: auto;
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 0 25px;
+      padding-top: 25px;
+    }
+
+    .book-read-container {
+      margin-top: 170px;
+      width: 415px;
+    }
+
+    .rockstar-description {
+      margin-top: 20px;
+      padding: 10px 25px;
+    }
+  }
+
+  /* ---------------------------- 430 px ---------------------------------- */
+
+  @media screen and (max-width: 430px) {
+
+    .rockstar-book {
+      height: 1360px;
+    }
+
+     .cover-container-wrapper {
+      width: 300px;
+      height: 429px;
+      margin-top: 60px;
+    }
+
+    .cover-container {
+      height: 429px;
+      width: 300px;
+    }
+
+    .cover-plate {
+      height: 429px;
+      width: 300px;
+      top: 20px;
+      right: 20px;
+    }
+
+
+    .book-read-container {
+      margin-top: 135px;
+      width: 100%;
+    }
+
+    .rockstar-description {
+      margin-top: 20px;
+      padding: 10px 35px;
+    }
+
+    .rockstar-buttons-wrapper {
+      padding: 0 35px;
+      padding-top: 30px;
+    }
+
+
+  }
 </style>
 
 <!-- Button -->
