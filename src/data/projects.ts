@@ -39,9 +39,9 @@ I na koniec – zdobyła 2. miejsce!
     `,
   },
   {
-    slug: "identyfikacja-marki",
-    title: "Identyfikacja marki",
-    category: "Grafika",
+    slug: "videogames-bathroom",
+    title: "Videogames Bathroom",
+    category: "3D / Interior",
     image: videoGamesBathroom,
     description: "Opis projektu identyfikacji marki - podmień na swój tekst.",
   },

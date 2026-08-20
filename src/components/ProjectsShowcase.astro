@@ -40,23 +40,25 @@ import { projects } from "../data/projects";
  
   <!-- WIDOK 2: jeden panel szczegółów na każdy projekt, domyślnie ukryte -->
   {projects.map((project) => (
-    <div class="project-detail is-hidden" data-slug={project.slug}>
-      <button type="button" class="back-btn">
-        <span class="back-btn__arrow">&larr;</span> Wróć do galerii
-      </button>
+    <div class="project-detail-wrapper is-hidden" data-slug={project.slug}>
+      <div class="project-detail">
+        <button type="button" class="back-btn">
+          <span class="back-btn__arrow">&larr;</span> Wróć do galerii
+        </button>
  
-      <Image
-        src={project.image}
-        alt={project.title}
-        width={1440}
-        height={810}
-        class="project-detail__hero"
-      />
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={1440}
+          height={810}
+          class="project-detail__hero"
+        />
  
-      <div class="project-detail__body">
-        {project.category && <span class="tag">{project.category}</span>}
-        <h2 class="project-detail__title">{project.title}</h2>
-        <p class="project-detail__description">{project.description}</p>
+        <div class="project-detail__body">
+          {project.category && <span class="tag">{project.category}</span>}
+          <h2 class="project-detail__title">{project.title}</h2>
+          <p class="project-detail__description">{project.description}</p>
+        </div>
       </div>
     </div>
   ))}
@@ -100,7 +102,6 @@ import { projects } from "../data/projects";
     flex: 0 0 calc((100% - 4rem) / 3);
     display: block;
     overflow: hidden;
-    /* border-radius: 1.1rem; */
     aspect-ratio: 4 / 3;
     text-decoration: none;
     background: var(--ink);
@@ -122,7 +123,6 @@ import { projects } from "../data/projects";
  
   .card:hover,
   .card:focus-visible {
-    /* transform: translateY(-4px); */
     box-shadow: 0 20px 32px -16px rgba(0, 0, 0, 0.35);
   }
  
@@ -242,11 +242,22 @@ import { projects } from "../data/projects";
   }
  
   /* ---------- Panel szczegółów projektu ---------- */
+ 
+  .project-detail-wrapper {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--base-light-background);
+  }
+ 
   .project-detail {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 720px;
+    max-width: 1080px;
   }
  
   .back-btn {
@@ -285,7 +296,7 @@ import { projects } from "../data/projects";
     height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 1.1rem;
+    /* border-radius: 1.1rem; */
     margin-bottom: 2rem;
   }
  
@@ -333,7 +344,7 @@ import { projects } from "../data/projects";
   // Cały skrypt działa po stronie przeglądarki (client-side).
   const galleryView = document.getElementById("gallery-view");
   const items = document.querySelectorAll<HTMLAnchorElement>(".card");
-  const details = document.querySelectorAll<HTMLDivElement>(".project-detail");
+  const details = document.querySelectorAll<HTMLDivElement>(".project-detail-wrapper");
  
   function showProject(slug: string) {
     galleryView?.classList.add("is-hidden");
