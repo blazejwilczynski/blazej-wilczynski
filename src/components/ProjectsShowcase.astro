@@ -43,22 +43,36 @@ import { projects } from "../data/projects";
     <div class="project-detail-wrapper is-hidden" data-slug={project.slug}>
       <div class="project-detail">
         <button type="button" class="back-btn">
-          <span class="back-btn__arrow">&larr;</span> Wróć do galerii
+          <span class="back-btn__arrow">&larr;</span> Wróć do projektów
         </button>
  
         <Image
           src={project.image}
           alt={project.title}
-          width={1440}
-          height={810}
+          width={2200}
+          quality={90}
           class="project-detail__hero"
         />
  
         <div class="project-detail__body">
           {project.category && <span class="tag">{project.category}</span>}
           <h2 class="project-detail__title">{project.title}</h2>
-          <p class="project-detail__description">{project.description}</p>
+          <div class="project-detail__description" set:html={project.description} />
         </div>
+ 
+        {project.gallery && project.gallery.length > 0 && (
+          <div class="project-detail__gallery">
+            {project.gallery.map((img) => (
+              <Image
+                src={img}
+                alt={project.title}
+                width={2000}
+                quality={90}
+                class="project-detail__gallery-img"
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   ))}
@@ -267,20 +281,20 @@ import { projects } from "../data/projects";
     align-self: flex-start;
     margin-bottom: 2rem;
     padding: 0.6rem 1.2rem;
-    border: 1px solid var(--line);
+    border: 1px solid var(--ink);
     border-radius: 999px;
-    background: transparent;
-    color: inherit;
-    font-size: 0.85rem;
-    font-weight: 500;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 1rem;
+    font-weight: 400;
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
  
   .back-btn:hover {
-    background: var(--ink);
+    background: var(--base-light-background);
     border-color: var(--ink);
-    color: var(--paper);
+    color: var(--ink);
   }
  
   .back-btn__arrow {
@@ -294,8 +308,6 @@ import { projects } from "../data/projects";
   .project-detail :global(.project-detail__hero) {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
     /* border-radius: 1.1rem; */
     margin-bottom: 2rem;
   }
@@ -316,8 +328,61 @@ import { projects } from "../data/projects";
  
   .project-detail__description {
     color: var(--muted);
+    font-size: 1.1rem;
     line-height: 1.65;
-    margin: 0;
+  }
+ 
+  .project-detail__description :global(p) {
+    margin: 0 0 1rem;
+  }
+ 
+  .project-detail__description :global(p:last-child) {
+    margin-bottom: 0;
+  }
+ 
+  .project-detail__description :global(h2),
+  .project-detail__description :global(h3) {
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 1.5rem 0 0.6rem;
+  }
+ 
+  .project-detail__description :global(h2) {
+    font-size: 1.4rem;
+  }
+ 
+  .project-detail__description :global(h3) {
+    font-size: 1.15rem;
+  }
+ 
+  .project-detail__description :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+ 
+  .project-detail__description :global(a:hover) {
+    text-decoration: none;
+  }
+ 
+  .project-detail__description :global(strong) {
+    color: var(--ink);
+    font-weight: 600;
+  }
+ 
+  /* Opcjonalna dodatkowa galeria w szczegółach - jedno zdjęcie pod drugim */
+  .project-detail__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+ 
+  .project-detail :global(.project-detail__gallery-img) {
+    width: 100%;
+    height: auto;
   }
  
   /* Ta klasa MUSI wygrywać ze wszystkimi innymi regułami display na tych elementach */

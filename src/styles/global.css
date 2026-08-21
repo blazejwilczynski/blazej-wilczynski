@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: #3bbca5;
+    background-color: var(--base-light-background);
 }
 
 ul {

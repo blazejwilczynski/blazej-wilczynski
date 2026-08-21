@@ -16,12 +16,15 @@ import ornithopter from "../assets/projects/ornithopter-01.webp";
 import rockstarPoster from "../assets/projects/rockstar-poster-01.webp";
 import starWarsBanksy from "../assets/projects/star-wars-banksy-room-01.webp";
 import videoGamesBathroom from "../assets/projects/videogames-bathroom-01.webp";
+import videoGamesBathroom02 from "../assets/projects/videogames-bathroom-02.webp";
+import videoGamesBathroom03 from "../assets/projects/videogames-bathroom-03.webp";
 
 export interface Project {
   slug: string;
   title: string;
   category?: string;
   image: ImageMetadata;
+  gallery?: ImageMetadata[]; // opcjonalne dodatkowe zdjęcia w szczegółach (0, 2, 5... dowolnie)
   description?: string;
 }
 
@@ -32,11 +35,11 @@ export const projects: Project[] = [
     category: "3D / Interior",
     image: destinyRoom,
     description: `
-    To praca konkursowa organizowana przez Playstation Poland i stronę jarock.pl
-Musiałem zrobić coś inspirowanego grą "DESTINY".
-Napis na ścianie oznacza Nieważne gdzie grasz. Ważne, że jesteś w Destiny.
-I na koniec – zdobyła 2. miejsce!
+     <p>To praca konkursowa organizowana przez Playstation Poland i stronę <a href="https://jarock.pl" target="_blank" rel="noopener">jarock.pl</a>.</p>
+  <p>Musiałem zrobić coś inspirowanego grą "DESTINY". Napis na ścianie oznacza <em>Nieważne gdzie grasz. Ważne, że jesteś w Destiny.</em></p>
+  <p>I na koniec – zdobyła <strong>2. miejsce!</strong></p>
     `,
+    gallery: [],
   },
   {
     slug: "videogames-bathroom",
@@ -44,6 +47,7 @@ I na koniec – zdobyła 2. miejsce!
     category: "3D / Interior",
     image: videoGamesBathroom,
     description: "Opis projektu identyfikacji marki - podmień na swój tekst.",
+    gallery: [videoGamesBathroom02, videoGamesBathroom03]
   },
   {
     slug: "strona-portfolio",
