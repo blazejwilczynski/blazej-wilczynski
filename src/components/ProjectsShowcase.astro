@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
 import { projects } from "../data/projects";
 ---
  
-<div class="showcase">
+<div class="showcase" id="grafika">
   <!-- WIDOK 1: karty projektów -->
   <div class="gallery-wrapper" id="gallery-view">
     <div class="gallery">
@@ -411,6 +411,15 @@ import { projects } from "../data/projects";
   const items = document.querySelectorAll<HTMLAnchorElement>(".card");
   const details = document.querySelectorAll<HTMLDivElement>(".project-detail-wrapper");
  
+  // Zbiór prawdziwych slugów projektów - żeby odróżnić "#nazwa-projektu"
+  // od zwykłych kotwic typu "#grafika" (id sekcji na stronie), które NIE
+  // powinny otwierać widoku szczegółów.
+  const knownSlugs = new Set(
+    Array.from(details)
+      .map((detail) => detail.dataset.slug)
+      .filter((slug): slug is string => Boolean(slug))
+  );
+ 
   function showProject(slug: string) {
     galleryView?.classList.add("is-hidden");
     details.forEach((detail) => {
@@ -448,16 +457,19 @@ import { projects } from "../data/projects";
   // Obsługa przycisku "Wstecz" w przeglądarce
   window.addEventListener("popstate", () => {
     const hash = window.location.hash.slice(1);
-    if (hash) {
+    if (hash && knownSlugs.has(hash)) {
       showProject(hash);
     } else {
       showGallery();
     }
   });
  
-  // Jeśli ktoś wejdzie na stronę z adresem zawierającym #slug (np. z linku), pokaż od razu ten projekt
+  // Jeśli ktoś wejdzie na stronę z adresem zawierającym #slug (np. z linku),
+  // pokaż od razu ten projekt - ale TYLKO jeśli hash faktycznie jest slugiem
+  // projektu, a nie np. zwykłą kotwicą do sekcji strony.
   const initialHash = window.location.hash.slice(1);
-  if (initialHash) {
+  if (initialHash && knownSlugs.has(initialHash)) {
     showProject(initialHash);
   }
 </script>
+ 
