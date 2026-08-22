@@ -14,6 +14,7 @@ import cartoonSkateRoom from "../assets/projects/cartoon-skate-room-01.webp";
 import destinyRoom from "../assets/projects/destiny-room.webp";
 import ornithopter from "../assets/projects/ornithopter-01.webp";
 import rockstarPoster from "../assets/projects/rockstar-poster-01.webp";
+import rockstarPoster02 from "../assets/projects/rockstar-poster-02.webp";
 import starWarsBanksy from "../assets/projects/star-wars-banksy-room-01.webp";
 import videoGamesBathroom from "../assets/projects/videogames-bathroom-01.webp";
 import videoGamesBathroom02 from "../assets/projects/videogames-bathroom-02.webp";
@@ -35,9 +36,9 @@ export const projects: Project[] = [
     category: "3D / Interior",
     image: destinyRoom,
     description: `
-     <p>To praca konkursowa organizowana przez Playstation Poland i stronę <a href="https://jarock.pl" target="_blank" rel="noopener">jarock.pl</a>.</p>
-  <p>Musiałem zrobić coś inspirowanego grą "DESTINY". Napis na ścianie oznacza <em>Nieważne gdzie grasz. Ważne, że jesteś w Destiny.</em></p>
-  <p>I na koniec – zdobyła <strong>2. miejsce!</strong></p>
+     <p>To praca konkursowa organizowana przez <a href="https://www.playstation.com/pl-pl/" target="_blank" rel="noopener">Playstation Poland</a> i portal <a href="https://jarock.pl" target="_blank" rel="noopener">jarock.pl</a>.</p>
+  <p>Należało stworzyć grafikę inspirowaną grą "DESTINY". </em></p>
+  <p>Praca zdobyła <strong>2. miejsce!</strong></p>
     `,
     gallery: [],
   },
@@ -46,7 +47,11 @@ export const projects: Project[] = [
     title: "Videogames Bathroom",
     category: "3D / Interior",
     image: videoGamesBathroom,
-    description: "Opis projektu identyfikacji marki - podmień na swój tekst.",
+    description: `
+    <p>Koncepcyjny projekt łazienki, w którym chciałem wykorzystać postacie z dwóch gier 
+    mojego dzieciństwa:</p>  <strong>Super Mario</strong> oraz  <strong>Metal Slug</strong>
+    
+    `,
     gallery: [videoGamesBathroom02, videoGamesBathroom03]
   },
   {
@@ -69,9 +74,10 @@ export const projects: Project[] = [
     category: "3D / Poster",
     image: rockstarPoster,
     description: "Opis projektu okładki książki - podmień na swój tekst.",
+    gallery: [rockstarPoster02],
   },
   {
-    slug: "rockstar-poster-01",
+    slug: "star-wars-banksy",
     title: "Rockstar Tourbus – Plakat",
     category: "3D / Poster",
     image: starWarsBanksy,
