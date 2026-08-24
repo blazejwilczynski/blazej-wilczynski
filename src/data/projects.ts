@@ -32,9 +32,19 @@ import ornithopter08 from "../assets/projects/ornithopter-08.webp";
 import rockstarPoster from "../assets/projects/rockstar-poster-01.webp";
 import rockstarPoster02 from "../assets/projects/rockstar-poster-02.webp";
 import starWarsBanksy from "../assets/projects/star-wars-banksy-room-01.webp";
+import starWarsBanksy02 from "../assets/projects/star-wars-banksy-room-02.webp";
+import starWarsBanksy03 from "../assets/projects/star-wars-banksy-room-03.webp";
+import starWarsBanksy04 from "../assets/projects/star-wars-banksy-room-04.webp";
+import starWarsBanksy05 from "../assets/projects/star-wars-banksy-room-05.webp";
 import videoGamesBathroom from "../assets/projects/videogames-bathroom-01.webp";
 import videoGamesBathroom02 from "../assets/projects/videogames-bathroom-02.webp";
 import videoGamesBathroom03 from "../assets/projects/videogames-bathroom-03.webp";
+import arendalHouse from "../assets/projects/arendal-house-01.webp";
+import arendalHouse02 from "../assets/projects/arendal-house-02.webp";
+import arendalHouse03 from "../assets/projects/arendal-house-03.webp";
+import arendalHouse04 from "../assets/projects/arendal-house-04.webp";
+import arendalHouse05 from "../assets/projects/arendal-house-05.webp";
+import arendalHouse06 from "../assets/projects/arendal-house-06.webp";
 
 export interface Project {
   slug: string;
@@ -68,7 +78,7 @@ export const projects: Project[] = [
     mojego dzieciństwa:</p>  <strong>Super Mario</strong> oraz  <strong>Metal Slug</strong>
     
     `,
-    gallery: [videoGamesBathroom02, videoGamesBathroom03]
+    gallery: [videoGamesBathroom02, videoGamesBathroom03],
   },
   {
     slug: "dune-ornithopter",
@@ -79,9 +89,16 @@ export const projects: Project[] = [
     asset z tego filmu.</p>
     <p>Padło na Ornithopter, który zrobił na mnie ogromne wrażenie.</p>
     <p>Model stworzony w <a href="https://www.blender.org" target="_blank" rel="noopener">Blenderze</a>, tekstury w <a href="   https://www.adobe.com/products/substance3d/apps/painter.html" target="_blank" rel="noopener">Substance Painter</a>, a następnie całość została przeniesiona do środowiska  <a href="https://www.unrealengine.com/" target="_blank" rel="noopener">Unreal Engine 5</a>.</p>
-    `
-    ,
-    gallery: [ornithopter02, ornithopter03, ornithopter04, ornithopter05, ornithopter06, ornithopter07, ornithopter08],
+    `,
+    gallery: [
+      ornithopter02,
+      ornithopter03,
+      ornithopter04,
+      ornithopter05,
+      ornithopter06,
+      ornithopter07,
+      ornithopter08,
+    ],
   },
   {
     slug: "cartoon-skate-room",
@@ -89,9 +106,17 @@ export const projects: Project[] = [
     category: "3D / Interior",
     image: cartoonSkateRoom,
     description: "Opis projektu salonu - podmień na swój tekst.",
-    gallery: [cartoonSkateRoom02, cartoonSkateRoom03, cartoonSkateRoom04, cartoonSkateRoom05,
-      cartoonSkateRoom06, cartoonSkateRoom07, cartoonSkateRoom08, cartoonSkateRoom09, cartoonSkateRoom10
-    ]
+    gallery: [
+      cartoonSkateRoom02,
+      cartoonSkateRoom03,
+      cartoonSkateRoom04,
+      cartoonSkateRoom05,
+      cartoonSkateRoom06,
+      cartoonSkateRoom07,
+      cartoonSkateRoom08,
+      cartoonSkateRoom09,
+      cartoonSkateRoom10,
+    ],
   },
   {
     slug: "rockstar-posters",
@@ -107,5 +132,25 @@ export const projects: Project[] = [
     category: "3D / Interior",
     image: starWarsBanksy,
     description: "Opis projektu aplikacji mobilnej - podmień na swój tekst.",
+    gallery: [
+      starWarsBanksy02,
+      starWarsBanksy03,
+      starWarsBanksy04,
+      starWarsBanksy05,
+    ],
+  },
+  {
+    slug: "arendal-house",
+    title: "Arendal House",
+    category: "3D / Architecture",
+    image: arendalHouse,
+    description: "Opis projektu aplikacji mobilnej - podmień na swój tekst.",
+    gallery: [
+      arendalHouse02,
+      arendalHouse03,
+      arendalHouse04,
+      arendalHouse05,
+      arendalHouse06,
+    ],
   },
 ];
