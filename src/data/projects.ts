@@ -11,8 +11,24 @@
 import type { ImageMetadata } from "astro";
 
 import cartoonSkateRoom from "../assets/projects/cartoon-skate-room-01.webp";
+import cartoonSkateRoom02 from "../assets/projects/cartoon-skate-room-02.webp";
+import cartoonSkateRoom03 from "../assets/projects/cartoon-skate-room-03.webp";
+import cartoonSkateRoom04 from "../assets/projects/cartoon-skate-room-04.webp";
+import cartoonSkateRoom05 from "../assets/projects/cartoon-skate-room-05.webp";
+import cartoonSkateRoom06 from "../assets/projects/cartoon-skate-room-06.webp";
+import cartoonSkateRoom07 from "../assets/projects/cartoon-skate-room-07.webp";
+import cartoonSkateRoom08 from "../assets/projects/cartoon-skate-room-08.webp";
+import cartoonSkateRoom09 from "../assets/projects/cartoon-skate-room-09.webp";
+import cartoonSkateRoom10 from "../assets/projects/cartoon-skate-room-10.webp";
 import destinyRoom from "../assets/projects/destiny-room.webp";
 import ornithopter from "../assets/projects/ornithopter-01.webp";
+import ornithopter02 from "../assets/projects/ornithopter-02.webp";
+import ornithopter03 from "../assets/projects/ornithopter-03.webp";
+import ornithopter04 from "../assets/projects/ornithopter-04.webp";
+import ornithopter05 from "../assets/projects/ornithopter-05.webp";
+import ornithopter06 from "../assets/projects/ornithopter-06.webp";
+import ornithopter07 from "../assets/projects/ornithopter-07.webp";
+import ornithopter08 from "../assets/projects/ornithopter-08.webp";
 import rockstarPoster from "../assets/projects/rockstar-poster-01.webp";
 import rockstarPoster02 from "../assets/projects/rockstar-poster-02.webp";
 import starWarsBanksy from "../assets/projects/star-wars-banksy-room-01.webp";
@@ -59,7 +75,13 @@ export const projects: Project[] = [
     title: "Dune – Ornithopter Fanart",
     category: "3D / Hard Surface",
     image: ornithopter,
-    description: "Opis projektu strony portfolio - podmień na swój tekst.",
+    description: `<p>Po obejrzeniu pierwszej cześci <b>Diuny</b>, chciałem wymodelować jakiś
+    asset z tego filmu.</p>
+    <p>Padło na Ornithopter, który zrobił na mnie ogromne wrażenie.</p>
+    <p>Model stworzony w <a href="https://www.blender.org" target="_blank" rel="noopener">Blenderze</a>, tekstury w <a href="   https://www.adobe.com/products/substance3d/apps/painter.html" target="_blank" rel="noopener">Substance Painter</a>, a następnie całość została przeniesiona do środowiska  <a href="https://www.unrealengine.com/" target="_blank" rel="noopener">Unreal Engine 5</a>.</p>
+    `
+    ,
+    gallery: [ornithopter02, ornithopter03, ornithopter04, ornithopter05, ornithopter06, ornithopter07, ornithopter08],
   },
   {
     slug: "cartoon-skate-room",
@@ -67,19 +89,22 @@ export const projects: Project[] = [
     category: "3D / Interior",
     image: cartoonSkateRoom,
     description: "Opis projektu salonu - podmień na swój tekst.",
+    gallery: [cartoonSkateRoom02, cartoonSkateRoom03, cartoonSkateRoom04, cartoonSkateRoom05,
+      cartoonSkateRoom06, cartoonSkateRoom07, cartoonSkateRoom08, cartoonSkateRoom09, cartoonSkateRoom10
+    ]
   },
   {
-    slug: "rockstar-poster-01",
-    title: "Rockstar Winter Stage – Plakat",
+    slug: "rockstar-posters",
+    title: "Rockstar – Plakaty",
     category: "3D / Poster",
     image: rockstarPoster,
     description: "Opis projektu okładki książki - podmień na swój tekst.",
     gallery: [rockstarPoster02],
   },
   {
-    slug: "star-wars-banksy",
-    title: "Rockstar Tourbus – Plakat",
-    category: "3D / Poster",
+    slug: "banksy-starwars-room",
+    title: "Banksy Star Wars Room",
+    category: "3D / Interior",
     image: starWarsBanksy,
     description: "Opis projektu aplikacji mobilnej - podmień na swój tekst.",
   },
