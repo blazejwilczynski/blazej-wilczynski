@@ -45,6 +45,12 @@ import arendalHouse03 from "../assets/projects/arendal-house-03.webp";
 import arendalHouse04 from "../assets/projects/arendal-house-04.webp";
 import arendalHouse05 from "../assets/projects/arendal-house-05.webp";
 import arendalHouse06 from "../assets/projects/arendal-house-06.webp";
+import tourTruck from "../assets/projects/tour-truck-01.webp";
+import tourTruck02 from "../assets/projects/tour-truck-02.webp";
+import houseTerraces from "../assets/projects/house-terraces-01.webp";
+import houseTerraces02 from "../assets/projects/house-terraces-02.webp";
+import houseTerraces03 from "../assets/projects/house-terraces-03.webp";
+import houseTerraces04 from "../assets/projects/house-terraces-04.webp";
 
 export interface Project {
   slug: string;
@@ -152,5 +158,24 @@ export const projects: Project[] = [
       arendalHouse05,
       arendalHouse06,
     ],
+  },
+   {
+    slug: "tour-track",
+    title: "Tour Truck",
+    category: "2D / Vector",
+    image: tourTruck,
+    description: "Opis projektu aplikacji mobilnej - podmień na swój tekst.",
+    gallery: [tourTruck02]
+    ,
+  },
+
+   {
+    slug: "terraces-house",
+    title: "Dom z tarasami",
+    category: "3D / Architecture",
+    image: houseTerraces,
+    description: "Opis projektu aplikacji mobilnej - podmień na swój tekst.",
+    gallery: [houseTerraces02, houseTerraces03, houseTerraces04]
+    ,
   },
 ];
