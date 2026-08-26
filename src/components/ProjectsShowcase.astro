@@ -4,10 +4,10 @@
 // Karty to zdjęcia - tytuł/kategoria/CTA pokazują się dopiero przy najechaniu,
 // z winietą u dołu dla czytelności. Klik chowa siatkę i pokazuje szczegóły
 // (bez przeładowania strony). Przycisk "Wróć" pokazuje siatkę z powrotem.
- 
+
 import { Image, getImage } from "astro:assets";
 import { projects } from "../data/projects";
- 
+
 // Dwie wersje każdego zdjęcia karty: mała (siatka 3-kolumnowa) i duża
 // (widok jednokolumnowy poniżej 1050px). Przeglądarka pobierze tylko
 // jedną z nich, dzięki <picture> z warunkiem media - nie obie naraz.
@@ -29,7 +29,7 @@ const cardImages = await Promise.all(
   })),
 );
 ---
- 
+
 <!-- <div class="projects-title-wrapper" id="grafika">
   <div class="projects-title">
     <h2>Grafika</h2> -->
@@ -72,7 +72,7 @@ const cardImages = await Promise.all(
       }
     </div>
   </div>
- 
+
   <!-- WIDOK 2: jeden panel szczegółów na każdy projekt, domyślnie ukryte -->
   {
     projects.map((project) => (
@@ -81,7 +81,7 @@ const cardImages = await Promise.all(
           <button type="button" class="back-btn">
             <span class="back-btn__arrow">&larr;</span> Wróć do projektów
           </button>
- 
+
           <Image
             src={project.image}
             alt={project.title}
@@ -89,7 +89,7 @@ const cardImages = await Promise.all(
             quality={100}
             class="project-detail__hero"
           />
- 
+
           <div class="project-detail__body">
             {project.category && <span class="tag">{project.category}</span>}
             <h2 class="project-detail__title">{project.title}</h2>
@@ -98,7 +98,7 @@ const cardImages = await Promise.all(
               set:html={project.description}
             />
           </div>
- 
+
           {project.gallery && project.gallery.length > 0 && (
             <div class="project-detail__gallery">
               {project.gallery.map((img) => (
@@ -117,7 +117,7 @@ const cardImages = await Promise.all(
     ))
   }
 </div>
- 
+
 <style>
   .showcase {
     --ink: #1b1a1d;
@@ -128,7 +128,7 @@ const cardImages = await Promise.all(
     font-family: inherit;
     display: flex;
   }
- 
+
   .projects-title-wrapper {
     height: 50px;
     width: 100%;
@@ -142,14 +142,14 @@ const cardImages = await Promise.all(
     /* background-color: lightblue; */
     height: 100%;
   }
- 
+
   .projects-title h2 {
     font-size: 30px;
     font-weight: 400;
   }
- 
+
   /* ---------- Siatka kart (flex, dokładnie 3 w rzędzie) ---------- */
- 
+
   .gallery-wrapper {
     width: 100%;
     display: flex;
@@ -160,7 +160,7 @@ const cardImages = await Promise.all(
     background-color: var(--base-light-background);
     scroll-margin-top: 40px;
   }
- 
+
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -170,7 +170,7 @@ const cardImages = await Promise.all(
     align-items: flex-start;
     justify-content: space-around;
   }
- 
+
   .card {
     position: relative;
     box-sizing: border-box;
@@ -185,29 +185,29 @@ const cardImages = await Promise.all(
       transform 0.3s ease,
       box-shadow 0.3s ease;
   }
- 
+
   @media (max-width: 860px) {
     .card {
       flex-basis: calc((100% - 2rem) / 2);
     }
   }
- 
+
   @media (max-width: 540px) {
     .card {
       flex-basis: 100%;
     }
   }
- 
+
   .card:hover,
   .card:focus-visible {
     box-shadow: 0 20px 32px -16px rgba(0, 0, 0, 0.35);
   }
- 
+
   .card:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
   }
- 
+
   /* Zdjęcie wypełnia całą kartę */
   .card :global(.card__image) {
     position: absolute;
@@ -217,12 +217,12 @@ const cardImages = await Promise.all(
     object-fit: cover;
     transition: transform 0.5s ease;
   }
- 
+
   .card:hover :global(.card__image),
   .card:focus-visible :global(.card__image) {
     /* transform: scale(1.06); */
   }
- 
+
   /* Winieta - stała, dla czytelności, mocniejsza przy hover */
   .card__vignette {
     position: absolute;
@@ -236,12 +236,12 @@ const cardImages = await Promise.all(
     opacity: 0.55;
     transition: opacity 0.35s ease;
   }
- 
+
   .card:hover .card__vignette,
   .card:focus-visible .card__vignette {
     opacity: 1;
   }
- 
+
   /* Treść - ukryta domyślnie, wjeżdża przy hover */
   .card__content {
     position: absolute;
@@ -254,7 +254,7 @@ const cardImages = await Promise.all(
     gap: 0.6rem;
     padding: 1.25rem 1.35rem;
   }
- 
+
   .card__content .tag {
     opacity: 0;
     transform: translateY(8px);
@@ -262,7 +262,7 @@ const cardImages = await Promise.all(
       opacity 0.35s ease,
       transform 0.35s ease;
   }
- 
+
   .card__title {
     color: var(--paper);
     font-size: 1.1rem;
@@ -276,7 +276,7 @@ const cardImages = await Promise.all(
       transform 0.35s ease;
     transition-delay: 0.03s;
   }
- 
+
   .card__cta {
     display: inline-flex;
     align-items: center;
@@ -291,7 +291,7 @@ const cardImages = await Promise.all(
       transform 0.35s ease;
     transition-delay: 0.06s;
   }
- 
+
   .card:hover .card__content .tag,
   .card:hover .card__title,
   .card:hover .card__cta,
@@ -301,16 +301,16 @@ const cardImages = await Promise.all(
     opacity: 1;
     transform: translateY(0);
   }
- 
+
   .card__arrow {
     transition: transform 0.25s ease;
   }
- 
+
   .card:hover .card__arrow,
   .card:focus-visible .card__arrow {
     transform: translateX(4px);
   }
- 
+
   /* Tag - używany też w widoku szczegółów, więc styl bazowy tutaj */
   .tag {
     align-self: flex-start;
@@ -323,9 +323,9 @@ const cardImages = await Promise.all(
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
- 
+
   /* ---------- Panel szczegółów projektu ---------- */
- 
+
   .project-detail-wrapper {
     width: 100%;
     height: auto;
@@ -336,14 +336,14 @@ const cardImages = await Promise.all(
     background-color: var(--base-light-background);
     scroll-margin-top: 40px;
   }
- 
+
   .project-detail {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 1080px;
   }
- 
+
   .back-btn {
     display: inline-flex;
     align-items: center;
@@ -363,56 +363,56 @@ const cardImages = await Promise.all(
       border-color 0.2s ease,
       color 0.2s ease;
   }
- 
+
   .back-btn:hover {
     background: var(--base-light-background);
     border-color: var(--ink);
     color: var(--ink);
   }
- 
+
   .back-btn__arrow {
     transition: transform 0.2s ease;
   }
- 
+
   .back-btn:hover .back-btn__arrow {
     transform: translateX(-3px);
   }
- 
+
   .project-detail :global(.project-detail__hero) {
     width: 100%;
     height: auto;
     /* border-radius: 1.1rem; */
     margin-bottom: 2rem;
   }
- 
+
   .project-detail__body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.9rem;
   }
- 
+
   .project-detail__title {
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     margin: 0;
   }
- 
+
   .project-detail__description {
     color: var(--muted);
     font-size: 1.1rem;
     line-height: 1.65;
   }
- 
+
   .project-detail__description :global(p) {
     margin: 0 0 1rem;
   }
- 
+
   .project-detail__description :global(p:last-child) {
     margin-bottom: 0;
   }
- 
+
   .project-detail__description :global(h2),
   .project-detail__description :global(h3) {
     color: var(--ink);
@@ -420,30 +420,30 @@ const cardImages = await Promise.all(
     letter-spacing: -0.01em;
     margin: 1.5rem 0 0.6rem;
   }
- 
+
   .project-detail__description :global(h2) {
     font-size: 1.4rem;
   }
- 
+
   .project-detail__description :global(h3) {
     font-size: 1.15rem;
   }
- 
+
   .project-detail__description :global(a) {
     color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
- 
+
   .project-detail__description :global(a:hover) {
     text-decoration: none;
   }
- 
+
   .project-detail__description :global(strong) {
     color: var(--ink);
     font-weight: 600;
   }
- 
+
   /* Opcjonalna dodatkowa galeria w szczegółach - jedno zdjęcie pod drugim */
   .project-detail__gallery {
     display: flex;
@@ -452,17 +452,17 @@ const cardImages = await Promise.all(
     width: 100%;
     margin-top: 2rem;
   }
- 
+
   .project-detail :global(.project-detail__gallery-img) {
     width: 100%;
     height: auto;
   }
- 
+
   /* Ta klasa MUSI wygrywać ze wszystkimi innymi regułami display na tych elementach */
   .is-hidden {
     display: none !important;
   }
- 
+
   @media (prefers-reduced-motion: reduce) {
     .card,
     .card :global(.card__image),
@@ -476,7 +476,7 @@ const cardImages = await Promise.all(
       transition: none;
     }
   }
- 
+
   /* 1200px */
   @media (max-width: 1200px) {
     .gallery,
@@ -484,7 +484,7 @@ const cardImages = await Promise.all(
       max-width: 1000px;
     }
   }
- 
+
   /*             1100px             */
   @media (max-width: 1100px) {
     .gallery,
@@ -492,18 +492,18 @@ const cardImages = await Promise.all(
       max-width: 925px;
     }
   }
- 
+
   /*             1050px                 */
   @media (max-width: 1050px) {
     .card {
       flex-basis: 100%;
       aspect-ratio: 4 / 3;
     }
- 
+
     .card__vignette {
       opacity: 1;
     }
- 
+
     .card__content .tag,
     .card__title,
     .card__cta {
@@ -511,7 +511,7 @@ const cardImages = await Promise.all(
       transform: translateY(0);
     }
   }
- 
+
   /*             1015px             */
   @media (max-width: 1015px) {
     .gallery,
@@ -519,7 +519,7 @@ const cardImages = await Promise.all(
       max-width: 900px;
     }
   }
- 
+
   /*             950px             */
   @media (max-width: 950px) {
     .gallery,
@@ -529,16 +529,29 @@ const cardImages = await Promise.all(
     }
   }
 
-   /*             575px             */
+  /*             575px             */
   @media (max-width: 575px) {
-    .gallery,
-    .project-detail {
-      padding-left: 15px;
-      padding-right: 15px;
+    .gallery {
+      padding-left: 0;
+      padding-right: 0;
     }
-   
+
+    .project-detail {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .back-btn {
+      margin-left: 25px;
+    }
+
+    .project-detail__body {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
 </style>
- 
+
 <script>
   // Cały skrypt działa po stronie przeglądarki (client-side).
   const galleryView = document.getElementById("gallery-view");
@@ -546,7 +559,7 @@ const cardImages = await Promise.all(
   const details = document.querySelectorAll<HTMLDivElement>(
     ".project-detail-wrapper",
   );
- 
+
   // Zbiór prawdziwych slugów projektów - żeby odróżnić "#nazwa-projektu"
   // od zwykłych kotwic typu "#grafika" (id sekcji na stronie), które NIE
   // powinny otwierać widoku szczegółów.
@@ -555,7 +568,7 @@ const cardImages = await Promise.all(
       .map((detail) => detail.dataset.slug)
       .filter((slug): slug is string => Boolean(slug)),
   );
- 
+
   function showProject(slug: string) {
     galleryView?.classList.add("is-hidden");
     let target: HTMLElement | null = null;
@@ -568,7 +581,7 @@ const cardImages = await Promise.all(
     // jak nisko był przewinięty kafelek w galerii.
     target?.scrollIntoView({ behavior: "instant", block: "start" });
   }
- 
+
   function showGallery() {
     galleryView?.classList.remove("is-hidden");
     details.forEach((detail) => {
@@ -576,7 +589,7 @@ const cardImages = await Promise.all(
     });
     galleryView?.scrollIntoView({ behavior: "instant", block: "start" });
   }
- 
+
   // Klik w kafelek -> pokaż szczegóły, zaktualizuj adres (bez przeładowania)
   items.forEach((item) => {
     item.addEventListener("click", (e) => {
@@ -587,7 +600,7 @@ const cardImages = await Promise.all(
       history.pushState({ slug }, "", `#${slug}`);
     });
   });
- 
+
   // Klik w "Wróć" -> pokaż galerię, wyczyść adres
   details.forEach((detail) => {
     const backBtn = detail.querySelector(".back-btn");
@@ -600,7 +613,7 @@ const cardImages = await Promise.all(
       );
     });
   });
- 
+
   // Obsługa przycisku "Wstecz" w przeglądarce
   window.addEventListener("popstate", () => {
     const hash = window.location.hash.slice(1);
@@ -610,7 +623,7 @@ const cardImages = await Promise.all(
       showGallery();
     }
   });
- 
+
   // Jeśli ktoś wejdzie na stronę z adresem zawierającym #slug (np. z linku),
   // pokaż od razu ten projekt - ale TYLKO jeśli hash faktycznie jest slugiem
   // projektu, a nie np. zwykłą kotwicą do sekcji strony.
@@ -619,4 +632,3 @@ const cardImages = await Promise.all(
     showProject(initialHash);
   }
 </script>
- 
