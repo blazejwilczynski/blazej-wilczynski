@@ -1,36 +1,39 @@
 ---
-
+import czarusiaBackground from "../assets/images/czarusia_background.webp";
 ---
 
-<div class="czarusia-wrapper">
-  <p>Czarusia header placholder</p>
+<div
+  class="czarusia-wrapper"
+  style={`background-image: url(${czarusiaBackground.src});`}
+>
+  <div class="czarusia-text">
+    <p>Kryminał z&nbsp;czarną kotką w&nbsp;roli głownej</p>
+    <p><b>Coming Soon</b></p>
+  </div>
 </div>
 
 <style>
   .czarusia-wrapper {
-    height: 600px;
+    height: 800px;
     width: 100%;
-    background: #141e30; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #243b55,
-      #141e30
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #243b55,
-      #141e30
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #141e30; /* fallback zanim obrazek się załaduje */
+    background-size: cover;
+    background-position: center top;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
 
-  .czarusia-wrapper p {
+  .czarusia-text {
+    display: flex;
+    flex-direction: column;
+    padding-right: 80px;
+  }
+
+  .czarusia-text p {
     font-size: 32px;
-    color: white;
-    font-family: 'Manrope';
+    color: var(--light-text-color);
+    font-family: "Manrope";
     font-weight: 300;
   }
 </style>
-
