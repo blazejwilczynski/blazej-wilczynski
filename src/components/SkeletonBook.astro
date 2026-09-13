@@ -1,8 +1,8 @@
 ---
 import skeletonCover from "../assets/images/skeleton-cover.webp";
 ---
- 
-<div class="skeleton-book">
+
+<div class="skeleton-book" id="skeleton">
   <div class="skeleton-book-wrapper">
     <div class="cover-container-wrapper-skeleton">
       <div class="cover-container-skeleton">
@@ -20,7 +20,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     </div>
     <div class="book-read-container-skeleton">
       <div class="skeleton-buttons-wrapper">
-         <!-- <a href="rockstar-bwilczynski.pdf" class="skeleton-download-button">
+        <!-- <a href="rockstar-bwilczynski.pdf" class="skeleton-download-button">
           <span>Pobierz PDF</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
           class="skeleton-download-button"
         >
           <span>Czytaj na Wattpadzie</span>
- 
+
           <svg
             viewBox="0 0 33 25"
             fill="none"
@@ -57,24 +57,28 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
       </div>
       <div class="skeleton-description">
         <p>
-         Gustav Drag jest handlarzem broni w Shadow Vale, a&nbsp;początek roku 2143 nie zaczyna się dla niego zbyt dobrze. 
-         Na mieście pojawił się nowy typ wszczepu, co rodzi dwa nurtujące pytania: dlaczego Gustav nie ma go jeszcze w swojej ofercie 
-         i,&nbsp;co ważniejsze, kto go zbudował?
+          Gustav Drag jest handlarzem broni w Shadow Vale, a&nbsp;początek roku
+          2143 nie zaczyna się dla niego zbyt dobrze. Na mieście pojawił się
+          nowy typ wszczepu, co rodzi dwa nurtujące pytania: dlaczego Gustav nie
+          ma go jeszcze w swojej ofercie i,&nbsp;co ważniejsze, kto go zbudował?
         </p>
         <p>
-          W&nbsp;dodatku odżywają plotki o&nbsp;urządzeniu, które pozwala wymazać świadomość dowolnej osoby 
-          i&nbsp;wgrać na jej miejsce inną. To budzi już nieskończoną liczbę pytań. 
-          Gustav z&nbsp;pewnością inaczej wyobrażał sobie swoje sześćdziesiąte trzecie urodziny.
+          W&nbsp;dodatku odżywają plotki o&nbsp;urządzeniu, które pozwala
+          wymazać świadomość dowolnej osoby i&nbsp;wgrać na jej miejsce inną. To
+          budzi już nieskończoną liczbę pytań. Gustav z&nbsp;pewnością inaczej
+          wyobrażał sobie swoje sześćdziesiąte trzecie urodziny.
         </p>
-        <p>Pewny jest tylko jednego: nadal będzie palił wyłącznie retro papierosy z&nbsp;prawdziwym tytoniem. Ma też nadzieję, 
-          że jego podwójne życie nie wyjdzie na jaw, ponieważ sprzedaż uzbrojenia to jedynie praca. 
+        <p>
+          Pewny jest tylko jednego: nadal będzie palił wyłącznie retro papierosy
+          z&nbsp;prawdziwym tytoniem. Ma też nadzieję, że jego podwójne życie
+          nie wyjdzie na jaw, ponieważ sprzedaż uzbrojenia to jedynie praca.
           Jego hobby jest już zupełnie inne...
-      </p>
+        </p>
       </div>
     </div>
   </div>
 </div>
- 
+
 <style>
   .skeleton-book {
     width: 100%;
@@ -84,7 +88,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     align-items: center;
     justify-content: center;
   }
- 
+
   .skeleton-book-wrapper {
     height: 100%;
     width: 100%;
@@ -93,13 +97,13 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     align-items: center;
     justify-content: center;
   }
- 
+
   .cover-container-wrapper-skeleton {
     position: relative;
     width: 456px;
     height: 653px;
   }
- 
+
   .cover-container-skeleton {
     height: 653px;
     width: 456px;
@@ -109,12 +113,12 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     z-index: 2;
     overflow: hidden;
   }
- 
+
   /* --------------------------- GLITCH --------------------------- */
   /* .glitch-cover wypełnia zawsze 100% cover-container-skeleton,
      więc na każdym breakpoincie poniżej dostaje właściwy rozmiar
      bez potrzeby dublowania media queries */
- 
+
   .glitch-cover {
     --gap-horizontal: 10px;
     --gap-vertical: 5px;
@@ -128,14 +132,14 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     --blend-color-3: transparent;
     --blend-color-4: transparent;
     --blend-color-5: #af4949;
- 
+
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
- 
+
   .glitch-cover .glitch__item-cover {
     background-image: var(--cover-image);
     background-repeat: no-repeat;
@@ -146,7 +150,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     width: 100%;
     height: 100%;
   }
- 
+
   .glitch-cover .glitch__item-cover:nth-child(n + 2) {
     opacity: 0;
     animation-duration: var(--time-anim);
@@ -154,13 +158,13 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
- 
+
   .glitch-cover .glitch__item-cover:nth-child(2) {
     background-color: var(--blend-color-2);
     background-blend-mode: var(--blend-mode-2);
     animation-name: glitch-anim-2;
   }
- 
+
   /* poprawka: w oryginale było znowu nth-child(2) -
      glitch-anim-3 nigdy się nie odpalał */
   .glitch-cover .glitch__item-cover:nth-child(3) {
@@ -168,19 +172,19 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     background-blend-mode: var(--blend-mode-3);
     animation-name: glitch-anim-3;
   }
- 
+
   .glitch-cover .glitch__item-cover:nth-child(4) {
     background-color: var(--blend-color-4);
     background-blend-mode: var(--blend-mode-4);
     animation-name: glitch-anim-4;
   }
- 
+
   .glitch-cover .glitch__item-cover:nth-child(5) {
     background-color: var(--blend-color-5);
     background-blend-mode: var(--blend-mode-5);
     animation-name: glitch-anim-flash;
   }
- 
+
   .book-read-container-skeleton {
     height: 90%;
     width: 50%;
@@ -189,7 +193,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     align-items: center;
     padding-top: 45px;
   }
- 
+
   .skeleton-buttons-wrapper {
     height: 100px;
     width: 100%;
@@ -198,7 +202,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     justify-content: flex-start;
     padding: 0 80px;
   }
- 
+
   .skeleton-download-button {
     cursor: pointer;
     font-family: "Manrope";
@@ -213,109 +217,109 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     align-items: center;
     font-size: 16px;
   }
- 
+
   .skeleton-download-button:hover {
-    background: #B8334A;
+    background: #b8334a;
   }
- 
+
   .skeleton-download-button > svg {
     width: 23px;
     margin-left: 10px;
     transition: transform 0.3s ease-in-out;
   }
- 
+
   .skeleton-download-button:hover svg {
     transform: translateX(5px);
   }
- 
+
   .skeleton-download-button:active {
     transform: scale(0.95);
   }
- 
+
   .skeleton-description {
     width: 100%;
     height: 200px;
     padding: 20px 85px;
   }
- 
+
   .skeleton-description p {
     color: var(--skeleton-text);
     font-size: 19px;
   }
- 
+
   /* ---------------------------- 1200 px ---------------------------------- */
- 
+
   @media screen and (max-width: 1200px) {
     .skeleton-book-wrapper {
       max-width: 1100px;
     }
- 
+
     .cover-container-wrapper-skeleton {
       position: relative;
       width: 402px;
       height: 575px;
     }
- 
+
     .cover-container-skeleton {
       height: 575px;
       width: 402px;
     }
- 
+
     .cover-plate-skeleton {
       height: 575px;
       width: 402px;
     }
- 
+
     .skeleton-buttons-wrapper {
       padding: 0 40px;
     }
- 
+
     .skeleton-description {
       padding: 20px 60px;
     }
   }
- 
+
   /* ---------------------------- 1100 px ---------------------------------- */
- 
+
   @media screen and (max-width: 1100px) {
     .skeleton-book {
       height: 700px;
     }
- 
+
     .skeleton-book-wrapper {
       max-width: 1000px;
     }
- 
+
     .cover-container-wrapper-skeleton {
       width: 367px;
       height: 525px;
     }
- 
+
     .cover-container-skeleton {
       height: 525px;
       width: 367px;
     }
- 
+
     .cover-plate-skeleton {
       height: 525px;
       width: 367px;
     }
- 
+
     .book-read-container-skeleton {
       padding-top: 35px;
     }
- 
+
     .skeleton-description {
       padding: 10px 50px;
     }
- 
+
     .skeleton-description p {
       font-size: 17px;
     }
   }
- 
+
   /* ---------------------------- 1000 px ---------------------------------- */
- 
+
   @media screen and (max-width: 1000px) {
     .skeleton-buttons-wrapper {
       height: auto;
@@ -324,123 +328,128 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
       gap: 15px;
       padding-top: 25px;
     }
- 
+
     .skeleton-description {
       padding: 10px 40px;
     }
- 
+
     .skeleton-description p {
       font-size: 16px;
     }
   }
- 
+
   /* ---------------------------- 950 px ---------------------------------- */
- 
+
   @media screen and (max-width: 950px) {
     .skeleton-book {
       height: 1400px;
     }
- 
+
+    .cover-container-skeleton,
+    .cover-plate-skeleton {
+      left: 0;
+    }
+
     .skeleton-book-wrapper {
       flex-direction: column;
     }
- 
+
     .skeleton-buttons-wrapper {
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
       width: 500px;
     }
- 
+
     .book-read-container-skeleton {
       margin-top: 340px;
       width: 600px;
     }
- 
+
     .cover-container-wrapper-skeleton {
       position: relative;
       width: 439px;
       height: 628px;
       margin-top: 50px;
     }
- 
+
     .cover-container-skeleton {
       height: 628px;
       width: 439px;
     }
- 
+
     .cover-plate-skeleton {
       height: 628px;
       width: 439px;
     }
- 
+
     .skeleton-description {
       margin-top: 30px;
       padding: 10px 50px;
     }
- 
+
     .skeleton-description p {
       font-size: 19px;
     }
   }
- 
+
   /* ---------------------------- 615 px ---------------------------------- */
- 
+
   @media screen and (max-width: 615px) {
     .skeleton-book {
       height: 1375px;
     }
- 
+
     .cover-container-wrapper-skeleton {
       width: 402px;
       height: 575px;
       margin-top: 60px;
     }
- 
+
     .cover-container-skeleton {
       height: 575px;
       width: 402px;
     }
- 
+
     .cover-plate-skeleton {
       height: 575px;
       width: 402px;
     }
- 
+
     .book-read-container-skeleton {
       margin-top: 280px;
       width: 500px;
     }
- 
+
     .skeleton-description {
       margin-top: 30px;
       padding: 10px 35px;
     }
   }
- 
+
   /* ---------------------------- 515 px ---------------------------------- */
- 
+
   @media screen and (max-width: 515px) {
     .skeleton-book {
       height: 1340px;
     }
- 
+
     .cover-container-wrapper-skeleton {
       width: 315px;
       height: 450px;
       margin-top: 60px;
     }
- 
+
     .cover-container-skeleton {
       height: 450px;
       width: 315px;
     }
- 
+
     .cover-plate-skeleton {
       height: 450px;
       width: 315px;
     }
- 
+
     .skeleton-buttons-wrapper {
       height: auto;
       width: 100%;
@@ -450,84 +459,84 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
       padding: 0 25px;
       padding-top: 5px;
     }
- 
+
     .book-read-container-skeleton {
       margin-top: 170px;
       width: 415px;
     }
- 
+
     .skeleton-description {
       margin-top: 10px;
       padding: 10px 25px;
     }
   }
- 
+
   /* ---------------------------- 430 px ---------------------------------- */
- 
+
   @media screen and (max-width: 430px) {
     .skeleton-book {
       height: 1310px;
     }
- 
+
     .cover-container-wrapper-skeleton {
       width: 300px;
       height: 429px;
       margin-top: 60px;
     }
- 
+
     .cover-container-skeleton {
       height: 429px;
       width: 300px;
     }
- 
+
     .cover-plate-skeleton {
       height: 429px;
       width: 300px;
       top: 20px;
       right: 20px;
     }
- 
+
     .book-read-container-skeleton {
       margin-top: 135px;
       width: 100%;
     }
- 
+
     .skeleton-description {
       margin-top: 5px;
       padding: 10px 35px;
     }
- 
+
     .skeleton-buttons-wrapper {
       padding: 0 35px;
       padding-top: 20px;
     }
   }
- 
+
   /* ---------------------------- 400 px ---------------------------------- */
- 
+
   @media screen and (max-width: 400px) {
     .skeleton-book {
       height: 1400px;
     }
- 
+
     .cover-plate-skeleton {
       display: none;
     }
- 
+
     .cover-container-wrapper-skeleton {
       width: 320px;
       height: 458px;
       margin-top: 60px;
     }
- 
+
     .cover-container-skeleton {
       height: 458px;
       width: 320px;
     }
   }
- 
+
   /* --------------------- GLITCH: keyframes --------------------- */
- 
+
   @keyframes glitch-anim-flash {
     0%,
     5% {
@@ -540,7 +549,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
       transform: translate3d(0, 0, 0);
     }
   }
- 
+
   @keyframes glitch-anim-2 {
     0% {
       opacity: 1;
@@ -588,7 +597,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
       clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     }
   }
- 
+
   @keyframes glitch-anim-3 {
     0% {
       opacity: 1;
@@ -636,7 +645,7 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
       clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     }
   }
- 
+
   @keyframes glitch-anim-4 {
     0% {
       opacity: 1;
@@ -711,4 +720,3 @@ import skeletonCover from "../assets/images/skeleton-cover.webp";
     }
   }
 </style>
- 
